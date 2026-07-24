@@ -127,6 +127,20 @@
   }
   .btn-cta:hover{ transform: translateY(-2px); box-shadow: 0 20px 40px -12px rgba(16,185,129,0.6); }
 
+  .btn-glow{ overflow:hidden; }
+  .btn-glow::after{
+    content:''; position:absolute; inset:0; border-radius:9999px;
+    background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%);
+    background-size: 220% 100%; background-position: 120% 0;
+    animation: btnSheen 4.5s ease-in-out infinite;
+    pointer-events:none;
+  }
+  @keyframes btnSheen{
+    0%, 55%{ background-position: 120% 0; }
+    75%{ background-position: -20% 0; }
+    100%{ background-position: -20% 0; }
+  }
+
   .btn-ghost{
     border:1px solid rgba(15,23,42,0.14); color:#0F172A;
     transition: border-color .3s ease, background .3s ease;
@@ -144,6 +158,14 @@
   /* timeline line */
   .timeline-line{
     background: linear-gradient(180deg, transparent, #2563EB 12%, #2563EB 88%, transparent);
+  }
+  .step-number{
+    opacity:0; transform: translate(-50%, 0) scale(.5);
+    transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1);
+  }
+  .step-number.in{ opacity:1; transform: translate(-50%, 0) scale(1); }
+  @media (prefers-reduced-motion: reduce){
+    .step-number{ opacity:1 !important; transform: translate(-50%,0) scale(1) !important; transition:none !important; }
   }
 
   ::selection{ background: rgba(37,99,235,0.22); }
@@ -204,19 +226,25 @@
         </div>
 
         <h1 class="reveal reveal-delay-1 text-[2.6rem] sm:text-6xl leading-[1.04] font-extrabold tracking-tightest text-navy-900 dark:text-white">
-          Sua empresa está sendo encontrada pelos <span class="text-gradient">clientes certos?</span>
+          Sua empresa está <span class="text-gradient">perdendo clientes</span> todos os dias. Talvez você ainda não saiba.
         </h1>
 
         <p class="reveal reveal-delay-2 mt-7 text-lg leading-relaxed text-navy-600 dark:text-navy-300">
-          Transformamos presença digital em clientes através de sites profissionais, SEO Local e soluções digitais que aumentam sua credibilidade.
+          Ajudamos empresas locais a aparecer no Google, transmitir mais confiança e transformar visitantes em clientes através de presença digital estratégica.
         </p>
 
         <div class="reveal reveal-delay-3 mt-10 flex flex-wrap items-center gap-4">
-          <a href="https://wa.me/55996484950?text=Ol%C3%A1!%20Quero%20meu%20diagn%C3%B3stico%20gratuito" target="_blank" rel="noopener" class="btn-cta rounded-full px-7 py-3.5 text-[15px] font-semibold">Solicitar diagnóstico gratuito</a>
+          <a href="https://wa.me/55996484950?text=Ol%C3%A1!%20Quero%20meu%20diagn%C3%B3stico%20gratuito" target="_blank" rel="noopener" class="btn-cta btn-glow relative rounded-full px-7 py-3.5 text-[15px] font-semibold">Solicitar diagnóstico gratuito</a>
           <a href="#projetos" class="btn-ghost rounded-full px-7 py-3.5 text-[15px] font-semibold flex items-center gap-2">
             Ver projetos
             <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
+        </div>
+
+        <div class="reveal reveal-delay-3 mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-[13.5px] text-navy-500 dark:text-navy-400">
+          <span class="inline-flex items-center gap-1.5"><svg class="h-3.5 w-3.5 text-go-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Atendimento personalizado</span>
+          <span class="inline-flex items-center gap-1.5"><svg class="h-3.5 w-3.5 text-go-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Foco em negócios locais</span>
+          <span class="inline-flex items-center gap-1.5"><svg class="h-3.5 w-3.5 text-go-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Entrega rápida</span>
         </div>
 
         <div class="reveal reveal-delay-4 mt-14 flex items-center gap-8 text-navy-500 dark:text-navy-400">
@@ -346,47 +374,47 @@
         <div class="h-11 w-11 rounded-xl bg-brand-50 dark:bg-brand-500/10 grid place-items-center mb-6">
           <svg class="h-5 w-5 text-brand-600 dark:text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3" stroke-linecap="round"/></svg>
         </div>
-        <p class="font-bold text-[16px] text-navy-900 dark:text-white mb-2">Sites Premium</p>
-        <p class="text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Design sob medida, rápido e feito para converter visitante em cliente.</p>
+        <p class="font-bold text-[16px] text-navy-900 dark:text-white mb-2">Tenha uma presença profissional</p>
+        <p class="text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Um site sob medida, rápido e feito para converter visitante em cliente.</p>
       </div>
 
       <div class="reveal reveal-delay-2 card-hover rounded-2xl border border-navy-900/8 dark:border-white/10 p-7 hover:border-brand-500/40 hover:shadow-[0_20px_45px_-20px_rgba(37,99,235,0.35)]">
         <div class="h-11 w-11 rounded-xl bg-brand-50 dark:bg-brand-500/10 grid place-items-center mb-6">
           <svg class="h-5 w-5 text-brand-600 dark:text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
         </div>
-        <p class="font-bold text-[16px] text-navy-900 dark:text-white mb-2">SEO Local</p>
-        <p class="text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Estratégia para aparecer nas buscas de quem já está perto e pronto para comprar.</p>
+        <p class="font-bold text-[16px] text-navy-900 dark:text-white mb-2">Seja encontrado no Google</p>
+        <p class="text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Estratégia de SEO Local para aparecer nas buscas de quem já está perto e pronto para comprar.</p>
       </div>
 
       <div class="reveal reveal-delay-3 card-hover rounded-2xl border border-navy-900/8 dark:border-white/10 p-7 hover:border-brand-500/40 hover:shadow-[0_20px_45px_-20px_rgba(37,99,235,0.35)]">
         <div class="h-11 w-11 rounded-xl bg-brand-50 dark:bg-brand-500/10 grid place-items-center mb-6">
           <svg class="h-5 w-5 text-brand-600 dark:text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-5.2-7-11a7 7 0 1 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
         </div>
-        <p class="font-bold text-[16px] text-navy-900 dark:text-white mb-2">Google Business</p>
-        <p class="text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Perfil otimizado com fotos, avaliações e informações que geram confiança.</p>
+        <p class="font-bold text-[16px] text-navy-900 dark:text-white mb-2">Passe mais credibilidade</p>
+        <p class="text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Perfil no Google Business otimizado com fotos, avaliações e informações que geram confiança.</p>
       </div>
 
       <div class="reveal reveal-delay-4 card-hover rounded-2xl border border-navy-900/8 dark:border-white/10 p-7 hover:border-brand-500/40 hover:shadow-[0_20px_45px_-20px_rgba(37,99,235,0.35)]">
         <div class="h-11 w-11 rounded-xl bg-brand-50 dark:bg-brand-500/10 grid place-items-center mb-6">
           <svg class="h-5 w-5 text-brand-600 dark:text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5s-.6-1.5-.9-2c-.2-.5-.5-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.9 1.2 3.1c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.2-.1-.2-.3-.2-.6-.3z"/><path d="M12 21a9 9 0 1 0-7.8-4.5L3 21l4.6-1.2A9 9 0 0 0 12 21z"/></svg>
         </div>
-        <p class="font-bold text-[16px] text-navy-900 dark:text-white mb-2">WhatsApp Integrado</p>
-        <p class="text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Do primeiro clique à conversa — sem fricção entre o site e o atendimento.</p>
+        <p class="font-bold text-[16px] text-navy-900 dark:text-white mb-2">Receba mais contatos</p>
+        <p class="text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Do primeiro clique à conversa no WhatsApp — sem fricção entre o site e o atendimento.</p>
       </div>
 
       <div class="reveal reveal-delay-1 card-hover rounded-2xl border border-navy-900/8 dark:border-white/10 p-7 hover:border-brand-500/40 hover:shadow-[0_20px_45px_-20px_rgba(37,99,235,0.35)]">
         <div class="h-11 w-11 rounded-xl bg-brand-50 dark:bg-brand-500/10 grid place-items-center mb-6">
           <svg class="h-5 w-5 text-brand-600 dark:text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7l8-4 8 4v6c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7z" stroke-linejoin="round"/></svg>
         </div>
-        <p class="font-bold text-[16px] text-navy-900 dark:text-white mb-2">Hospedagem</p>
-        <p class="text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Infraestrutura segura e monitorada, sem você precisar entender de servidor.</p>
+        <p class="font-bold text-[16px] text-navy-900 dark:text-white mb-2">Não se preocupe com nada técnico</p>
+        <p class="text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Hospedagem segura e monitorada, sem você precisar entender de servidor.</p>
       </div>
 
       <div class="reveal reveal-delay-2 card-hover rounded-2xl border border-navy-900/8 dark:border-white/10 p-7 hover:border-brand-500/40 hover:shadow-[0_20px_45px_-20px_rgba(37,99,235,0.35)]">
         <div class="h-11 w-11 rounded-xl bg-brand-50 dark:bg-brand-500/10 grid place-items-center mb-6">
           <svg class="h-5 w-5 text-brand-600 dark:text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 8v4l2.5 2.5"/><circle cx="12" cy="12" r="9"/></svg>
         </div>
-        <p class="font-bold text-[16px] text-navy-900 dark:text-white mb-2">Suporte</p>
+        <p class="font-bold text-[16px] text-navy-900 dark:text-white mb-2">Conte com suporte de verdade</p>
         <p class="text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Time disponível quando você precisar ajustar algo — sem burocracia.</p>
       </div>
 
@@ -394,8 +422,8 @@
         <div class="h-11 w-11 rounded-xl bg-brand-50 dark:bg-brand-500/10 grid place-items-center mb-6">
           <svg class="h-5 w-5 text-brand-600 dark:text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" stroke-linejoin="round"/></svg>
         </div>
-        <p class="font-bold text-[16px] text-navy-900 dark:text-white mb-2">Performance</p>
-        <p class="text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Carregamento rápido em qualquer conexão — o Google recompensa isso.</p>
+        <p class="font-bold text-[16px] text-navy-900 dark:text-white mb-2">Destaque-se da concorrência</p>
+        <p class="text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Carregamento rápido em qualquer conexão — o Google recompensa isso, e o cliente também.</p>
       </div>
 
       <div class="reveal reveal-delay-4 rounded-2xl bg-navy-900 dark:bg-brand-600 p-7 flex flex-col justify-between">
@@ -428,7 +456,8 @@
 
       <div class="space-y-14 lg:space-y-0">
 
-        <div class="reveal reveal-delay-1 lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+        <div class="reveal reveal-delay-1 relative lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+          <div class="step-number reveal-delay-1 hidden lg:grid absolute left-1/2 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-white dark:bg-navy-900 border-2 border-brand-500 place-items-center font-bold text-brand-600 dark:text-brand-400 z-10">01</div>
           <div class="lg:text-right lg:pr-16">
             <span class="text-[13px] font-semibold text-brand-600 dark:text-brand-400">Etapa 01</span>
             <h3 class="mt-2 text-2xl font-bold text-navy-900 dark:text-white">Diagnóstico</h3>
@@ -437,7 +466,8 @@
           <div class="hidden lg:block"></div>
         </div>
 
-        <div class="reveal reveal-delay-2 lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+        <div class="reveal reveal-delay-2 relative lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+          <div class="step-number reveal-delay-2 hidden lg:grid absolute left-1/2 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-white dark:bg-navy-900 border-2 border-brand-500 place-items-center font-bold text-brand-600 dark:text-brand-400 z-10">02</div>
           <div class="hidden lg:block"></div>
           <div class="lg:pl-16">
             <span class="text-[13px] font-semibold text-brand-600 dark:text-brand-400">Etapa 02</span>
@@ -446,7 +476,8 @@
           </div>
         </div>
 
-        <div class="reveal reveal-delay-3 lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+        <div class="reveal reveal-delay-3 relative lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+          <div class="step-number reveal-delay-3 hidden lg:grid absolute left-1/2 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-white dark:bg-navy-900 border-2 border-brand-500 place-items-center font-bold text-brand-600 dark:text-brand-400 z-10">03</div>
           <div class="lg:text-right lg:pr-16">
             <span class="text-[13px] font-semibold text-brand-600 dark:text-brand-400">Etapa 03</span>
             <h3 class="mt-2 text-2xl font-bold text-navy-900 dark:text-white">Desenvolvimento</h3>
@@ -455,7 +486,8 @@
           <div class="hidden lg:block"></div>
         </div>
 
-        <div class="reveal reveal-delay-4 lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+        <div class="reveal reveal-delay-4 relative lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+          <div class="step-number reveal-delay-4 hidden lg:grid absolute left-1/2 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-white dark:bg-navy-900 border-2 border-brand-500 place-items-center font-bold text-brand-600 dark:text-brand-400 z-10">04</div>
           <div class="hidden lg:block"></div>
           <div class="lg:pl-16">
             <span class="text-[13px] font-semibold text-brand-600 dark:text-brand-400">Etapa 04</span>
@@ -464,7 +496,8 @@
           </div>
         </div>
 
-        <div class="reveal lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+        <div class="reveal relative lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+          <div class="step-number hidden lg:grid absolute left-1/2 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-white dark:bg-navy-900 border-2 border-go-500 place-items-center font-bold text-go-600 dark:text-go-400 z-10">05</div>
           <div class="lg:text-right lg:pr-16">
             <span class="text-[13px] font-semibold text-go-600 dark:text-go-400">Etapa 05</span>
             <h3 class="mt-2 text-2xl font-bold text-navy-900 dark:text-white">Crescimento</h3>
@@ -475,6 +508,83 @@
 
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ======================= DIFERENCIAIS ======================= -->
+<section class="py-28 lg:py-36 bg-white dark:bg-navy-950">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="max-w-2xl">
+      <p class="reveal text-[13px] font-semibold tracking-widest uppercase text-brand-600 dark:text-brand-400">Diferenciais</p>
+      <h2 class="reveal reveal-delay-1 mt-4 text-4xl sm:text-5xl font-extrabold tracking-tightest text-navy-900 dark:text-white leading-[1.08]">
+        Por que escolher a Posiciona Digital?
+      </h2>
+    </div>
+
+    <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <div class="reveal reveal-delay-1 card-hover rounded-2xl border border-navy-900/8 dark:border-white/10 p-7 hover:border-brand-500/40 hover:shadow-[0_20px_45px_-20px_rgba(37,99,235,0.35)]">
+        <div class="h-11 w-11 rounded-xl bg-brand-50 dark:bg-brand-500/10 grid place-items-center mb-6">
+          <svg class="h-5 w-5 text-brand-600 dark:text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        </div>
+        <p class="font-bold text-[16px] text-navy-900 dark:text-white mb-2">Estratégia antes da execução</p>
+        <p class="text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Nenhuma linha é escrita antes de entendermos o seu negócio e o seu cliente.</p>
+      </div>
+
+      <div class="reveal reveal-delay-2 card-hover rounded-2xl border border-navy-900/8 dark:border-white/10 p-7 hover:border-brand-500/40 hover:shadow-[0_20px_45px_-20px_rgba(37,99,235,0.35)]">
+        <div class="h-11 w-11 rounded-xl bg-brand-50 dark:bg-brand-500/10 grid place-items-center mb-6">
+          <svg class="h-5 w-5 text-brand-600 dark:text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" stroke-linejoin="round"/></svg>
+        </div>
+        <p class="font-bold text-[16px] text-navy-900 dark:text-white mb-2">Sites rápidos</p>
+        <p class="text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Performance de carregamento pensada para reter o visitante nos primeiros segundos.</p>
+      </div>
+
+      <div class="reveal reveal-delay-3 card-hover rounded-2xl border border-navy-900/8 dark:border-white/10 p-7 hover:border-brand-500/40 hover:shadow-[0_20px_45px_-20px_rgba(37,99,235,0.35)]">
+        <div class="h-11 w-11 rounded-xl bg-brand-50 dark:bg-brand-500/10 grid place-items-center mb-6">
+          <svg class="h-5 w-5 text-brand-600 dark:text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z" stroke-linejoin="round"/></svg>
+        </div>
+        <p class="font-bold text-[16px] text-navy-900 dark:text-white mb-2">Design Premium</p>
+        <p class="text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Layouts sob medida, sem templates genéricos — feitos para a identidade da sua empresa.</p>
+      </div>
+
+      <div class="reveal reveal-delay-1 card-hover rounded-2xl border border-navy-900/8 dark:border-white/10 p-7 hover:border-brand-500/40 hover:shadow-[0_20px_45px_-20px_rgba(37,99,235,0.35)]">
+        <div class="h-11 w-11 rounded-xl bg-brand-50 dark:bg-brand-500/10 grid place-items-center mb-6">
+          <svg class="h-5 w-5 text-brand-600 dark:text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
+        </div>
+        <p class="font-bold text-[16px] text-navy-900 dark:text-white mb-2">SEO Local</p>
+        <p class="text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Estrutura técnica e de conteúdo pensada para aparecer nas buscas da sua região.</p>
+      </div>
+
+      <div class="reveal reveal-delay-2 card-hover rounded-2xl border border-navy-900/8 dark:border-white/10 p-7 hover:border-brand-500/40 hover:shadow-[0_20px_45px_-20px_rgba(37,99,235,0.35)]">
+        <div class="h-11 w-11 rounded-xl bg-brand-50 dark:bg-brand-500/10 grid place-items-center mb-6">
+          <svg class="h-5 w-5 text-brand-600 dark:text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 8v4l2.5 2.5"/><circle cx="12" cy="12" r="9"/></svg>
+        </div>
+        <p class="font-bold text-[16px] text-navy-900 dark:text-white mb-2">Suporte</p>
+        <p class="text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Time disponível quando você precisar ajustar algo — sem burocracia.</p>
+      </div>
+
+      <div class="reveal reveal-delay-3 card-hover rounded-2xl border border-navy-900/8 dark:border-white/10 p-7 hover:border-brand-500/40 hover:shadow-[0_20px_45px_-20px_rgba(37,99,235,0.35)]">
+        <div class="h-11 w-11 rounded-xl bg-brand-50 dark:bg-brand-500/10 grid place-items-center mb-6">
+          <svg class="h-5 w-5 text-brand-600 dark:text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7l8-4 8 4v6c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7z" stroke-linejoin="round"/></svg>
+        </div>
+        <p class="font-bold text-[16px] text-navy-900 dark:text-white mb-2">Entrega Ágil</p>
+        <p class="text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Processo enxuto, com marcos claros do diagnóstico até a publicação do site.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PROVA DE CONFIANÇA ======================= -->
+<section class="py-24 lg:py-28 bg-navy-50 dark:bg-navy-900/40">
+  <div class="max-w-3xl mx-auto px-6 lg:px-10 text-center">
+    <p class="reveal text-[13px] font-semibold tracking-widest uppercase text-brand-600 dark:text-brand-400">Projetos</p>
+    <h2 class="reveal reveal-delay-1 mt-4 text-3xl sm:text-4xl font-extrabold tracking-tightest text-navy-900 dark:text-white leading-[1.15]">
+      Construímos soluções para empresas que querem crescer.
+    </h2>
+    <p class="reveal reveal-delay-2 mt-5 text-[15px] text-navy-500 dark:text-navy-400 leading-relaxed">
+      Estamos expandindo nosso portfólio com projetos desenvolvidos para negócios locais que buscam evoluir sua presença digital.
+    </p>
   </div>
 </section>
 
@@ -502,6 +612,11 @@
           <span class="text-[11.5px] font-semibold tracking-widest uppercase text-brand-600 dark:text-brand-400">Clínica odontológica</span>
           <p class="mt-2 font-bold text-[17px] text-navy-900 dark:text-white">Site institucional + SEO Local</p>
           <p class="mt-2 text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Presença completa para uma clínica que só recebia indicação boca a boca.</p>
+          <div class="mt-4 flex flex-wrap gap-1.5">
+            <span class="text-[11px] font-medium px-2.5 py-1 rounded-full bg-brand-50 dark:bg-brand-500/10 text-brand-700 dark:text-brand-300">Site institucional</span>
+            <span class="text-[11px] font-medium px-2.5 py-1 rounded-full bg-brand-50 dark:bg-brand-500/10 text-brand-700 dark:text-brand-300">SEO Local</span>
+            <span class="text-[11px] font-medium px-2.5 py-1 rounded-full bg-brand-50 dark:bg-brand-500/10 text-brand-700 dark:text-brand-300">Google Business</span>
+          </div>
           <a href="#" class="mt-5 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-navy-900 dark:text-white group/link">
             Ver estudo de caso
             <svg class="h-3.5 w-3.5 group-hover/link:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
@@ -519,6 +634,11 @@
           <span class="text-[11.5px] font-semibold tracking-widest uppercase text-brand-600 dark:text-brand-400">Escritório de advocacia</span>
           <p class="mt-2 font-bold text-[17px] text-navy-900 dark:text-white">Site premium + Google Business</p>
           <p class="mt-2 text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Autoridade visual para conquistar casos de maior valor na região.</p>
+          <div class="mt-4 flex flex-wrap gap-1.5">
+            <span class="text-[11px] font-medium px-2.5 py-1 rounded-full bg-brand-50 dark:bg-brand-500/10 text-brand-700 dark:text-brand-300">Site premium</span>
+            <span class="text-[11px] font-medium px-2.5 py-1 rounded-full bg-brand-50 dark:bg-brand-500/10 text-brand-700 dark:text-brand-300">Google Business</span>
+            <span class="text-[11px] font-medium px-2.5 py-1 rounded-full bg-brand-50 dark:bg-brand-500/10 text-brand-700 dark:text-brand-300">Copywriting</span>
+          </div>
           <a href="#" class="mt-5 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-navy-900 dark:text-white group/link">
             Ver estudo de caso
             <svg class="h-3.5 w-3.5 group-hover/link:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
@@ -536,6 +656,11 @@
           <span class="text-[11.5px] font-semibold tracking-widest uppercase text-brand-600 dark:text-brand-400">Loja de móveis planejados</span>
           <p class="mt-2 font-bold text-[17px] text-navy-900 dark:text-white">E-commerce + WhatsApp integrado</p>
           <p class="mt-2 text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Orçamentos direto pelo site, sem perder nenhum lead no caminho.</p>
+          <div class="mt-4 flex flex-wrap gap-1.5">
+            <span class="text-[11px] font-medium px-2.5 py-1 rounded-full bg-brand-50 dark:bg-brand-500/10 text-brand-700 dark:text-brand-300">E-commerce</span>
+            <span class="text-[11px] font-medium px-2.5 py-1 rounded-full bg-brand-50 dark:bg-brand-500/10 text-brand-700 dark:text-brand-300">WhatsApp integrado</span>
+            <span class="text-[11px] font-medium px-2.5 py-1 rounded-full bg-brand-50 dark:bg-brand-500/10 text-brand-700 dark:text-brand-300">SEO Local</span>
+          </div>
           <a href="#" class="mt-5 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-navy-900 dark:text-white group/link">
             Ver estudo de caso
             <svg class="h-3.5 w-3.5 group-hover/link:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
@@ -688,15 +813,54 @@
   <div class="absolute inset-0 dot-grid opacity-25 pointer-events-none"></div>
   <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[800px] rounded-full bg-brand-500/15 blur-[130px] pointer-events-none"></div>
 
-  <div class="relative max-w-3xl mx-auto px-6 text-center">
-    <h2 class="reveal text-4xl sm:text-6xl font-extrabold tracking-tightest text-white leading-[1.06]">
-      Vamos posicionar sua empresa?
-    </h2>
-    <p class="reveal reveal-delay-1 mt-6 text-lg text-navy-300 leading-relaxed max-w-xl mx-auto">
-      Fale com a gente hoje e descubra exatamente onde sua empresa está perdendo clientes — e como resolver isso.
-    </p>
-    <div class="reveal reveal-delay-2 mt-10">
-      <a href="https://wa.me/55996484950?text=Ol%C3%A1!%20Quero%20meu%20diagn%C3%B3stico%20gratuito" target="_blank" rel="noopener" class="btn-cta inline-flex rounded-full px-9 py-4 text-[16px] font-semibold">Quero meu diagnóstico gratuito</a>
+  <div class="relative max-w-5xl mx-auto px-6">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="reveal text-4xl sm:text-6xl font-extrabold tracking-tightest text-white leading-[1.06]">
+        Receba gratuitamente um diagnóstico digital da sua empresa.
+      </h2>
+      <p class="reveal reveal-delay-1 mt-6 text-lg text-navy-300 leading-relaxed max-w-xl mx-auto">
+        Em até 24 horas analisaremos o essencial da sua presença digital — sem custo e sem compromisso.
+      </p>
+    </div>
+
+    <div class="mt-14 grid lg:grid-cols-2 gap-6 items-stretch">
+
+      <!-- Caixa de entregáveis -->
+      <div class="reveal reveal-delay-2 rounded-2xl border border-white/10 bg-white/[0.03] p-8">
+        <p class="text-[13px] font-semibold tracking-widest uppercase text-go-400 mb-6">O que vamos analisar</p>
+        <ul class="space-y-4">
+          <li class="flex items-center gap-3 text-[15px] text-navy-200"><span class="h-1.5 w-1.5 rounded-full bg-go-500 flex-shrink-0"></span>Site</li>
+          <li class="flex items-center gap-3 text-[15px] text-navy-200"><span class="h-1.5 w-1.5 rounded-full bg-go-500 flex-shrink-0"></span>Google</li>
+          <li class="flex items-center gap-3 text-[15px] text-navy-200"><span class="h-1.5 w-1.5 rounded-full bg-go-500 flex-shrink-0"></span>SEO</li>
+          <li class="flex items-center gap-3 text-[15px] text-navy-200"><span class="h-1.5 w-1.5 rounded-full bg-go-500 flex-shrink-0"></span>WhatsApp</li>
+          <li class="flex items-center gap-3 text-[15px] text-navy-200"><span class="h-1.5 w-1.5 rounded-full bg-go-500 flex-shrink-0"></span>Credibilidade</li>
+          <li class="flex items-center gap-3 text-[15px] text-navy-200"><span class="h-1.5 w-1.5 rounded-full bg-go-500 flex-shrink-0"></span>Oportunidades de melhoria</li>
+        </ul>
+      </div>
+
+      <!-- Formulário -->
+      <form id="diagnostico-form" class="reveal reveal-delay-3 rounded-2xl border border-white/10 bg-white/[0.03] p-8 flex flex-col">
+        <div>
+          <label for="f-nome" class="block text-[13px] font-medium text-navy-300 mb-2">Seu nome</label>
+          <input id="f-nome" name="nome" type="text" required placeholder="Como podemos te chamar?" class="w-full rounded-xl bg-white/[0.05] border border-white/10 px-4 py-3 text-[14.5px] text-white placeholder:text-navy-500 focus:outline-none focus:border-brand-400 transition-colors">
+        </div>
+        <div class="mt-4">
+          <label for="f-segmento" class="block text-[13px] font-medium text-navy-300 mb-2">Segmento da empresa</label>
+          <select id="f-segmento" name="segmento" required class="w-full rounded-xl bg-white/[0.05] border border-white/10 px-4 py-3 text-[14.5px] text-white focus:outline-none focus:border-brand-400 transition-colors">
+            <option value="" disabled selected class="bg-navy-900">Selecione uma opção</option>
+            <option value="Oficina" class="bg-navy-900">Oficina</option>
+            <option value="Restaurante" class="bg-navy-900">Restaurante</option>
+            <option value="Hotel" class="bg-navy-900">Hotel</option>
+            <option value="Clínica" class="bg-navy-900">Clínica</option>
+            <option value="Loja" class="bg-navy-900">Loja</option>
+            <option value="Prestador de serviço" class="bg-navy-900">Prestador de serviço</option>
+            <option value="Outro" class="bg-navy-900">Outro</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-cta btn-glow relative mt-6 rounded-full px-7 py-3.5 text-[15px] font-semibold w-full">Quero meu diagnóstico gratuito</button>
+        <p class="mt-4 text-[13px] text-navy-400 text-center">Responderemos em até 24 horas úteis.</p>
+      </form>
+
     </div>
   </div>
 </section>
@@ -714,6 +878,7 @@
           <span class="text-[15px] font-bold tracking-tight text-white">Posiciona<span class="text-brand-400">Digital</span></span>
         </div>
         <p class="mt-5 text-[14px] text-navy-400 leading-relaxed max-w-xs">Presença digital que transforma buscas em clientes para pequenas e médias empresas.</p>
+        <p class="mt-4 text-[13px] text-navy-500 leading-relaxed max-w-xs">Nossa missão é dar a empresas locais a mesma credibilidade digital das grandes marcas — para que sejam encontradas pelos clientes certos, todos os dias.</p>
       </div>
 
       <div>
@@ -788,7 +953,7 @@
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  document.querySelectorAll('.reveal, .step-number').forEach(el => io.observe(el));
 
   // Accordion
   document.querySelectorAll('.accordion-trigger').forEach(btn => {
@@ -799,6 +964,18 @@
       if (!wasOpen) item.classList.add('open');
     });
   });
+
+  // Formulário de diagnóstico -> abre WhatsApp com os dados preenchidos
+  const diagForm = document.getElementById('diagnostico-form');
+  if (diagForm) {
+    diagForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nome = document.getElementById('f-nome').value.trim();
+      const segmento = document.getElementById('f-segmento').value;
+      const msg = `Olá! Meu nome é ${nome} e minha empresa é do segmento de ${segmento}. Quero meu diagnóstico gratuito.`;
+      window.open(`https://wa.me/55996484950?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
+    });
+  }
 
   // Smooth anchor offset for fixed header
   document.querySelectorAll('a[href^="#"]').forEach(a => {
