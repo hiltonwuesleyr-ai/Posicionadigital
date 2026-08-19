@@ -3,995 +3,159 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Posiciona Digital — Presença digital que transforma em clientes</title>
-<meta name="description" content="Sites premium, SEO Local e presença digital para pequenas e médias empresas que querem ser encontradas pelos clientes certos.">
-
-<!-- Open Graph -->
-<meta property="og:title" content="Posiciona Digital — Sua empresa está sendo encontrada?">
-<meta property="og:description" content="Transformamos presença digital em clientes através de sites profissionais, SEO Local e soluções digitais que aumentam sua credibilidade.">
+<title>Posiciona Digital — Presença digital que transforma buscas em clientes</title>
+<meta name="description" content="Sites profissionais, SEO Local e presença digital para empresas que querem ser encontradas, transmitir confiança e gerar mais oportunidades.">
+<meta property="og:title" content="Posiciona Digital — Presença digital para empresas locais">
+<meta property="og:description" content="Sites profissionais, SEO Local e soluções digitais para empresas que querem ser encontradas pelos clientes certos.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
-
+<meta property="og:url" content="https://www.agenciaposiciona.com.br/">
+<link rel="canonical" href="https://www.agenciaposiciona.com.br/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
-  tailwind.config = {
-    darkMode: 'class',
-    theme: {
-      extend: {
-        fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
-        colors: {
-          navy: { DEFAULT: '#0F172A', 50:'#F8FAFC',100:'#F1F5F9',200:'#E2E8F0',300:'#CBD5E1',400:'#94A3B8',500:'#64748B',600:'#475569',700:'#334155',800:'#1E293B',900:'#0F172A',950:'#080D1A' },
-          brand: { DEFAULT:'#2563EB', 50:'#EFF6FF',100:'#DBEAFE',400:'#60A5FA',500:'#3B82F6',600:'#2563EB',700:'#1D4ED8' },
-          go: { DEFAULT:'#10B981', 600:'#059669', 500:'#10B981', 400:'#34D399' }
-        },
-        letterSpacing: { tightest: '-0.045em' },
-      }
-    }
-  }
+tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif']},colors:{navy:{50:'#F8FAFC',100:'#F1F5F9',300:'#CBD5E1',400:'#94A3B8',500:'#64748B',600:'#475569',700:'#334155',800:'#1E293B',900:'#0F172A',950:'#080D1A'},brand:{400:'#60A5FA',500:'#3B82F6',600:'#2563EB',700:'#1D4ED8'},go:{400:'#34D399',500:'#10B981',600:'#059669'}}}}}
 </script>
-
 <style>
-  :root{ color-scheme: light; }
-  html.dark{ color-scheme: dark; }
-  html{ scroll-behavior: smooth; }
-  body{
-    background:#FFFFFF; color:#0F172A;
-    font-feature-settings:'ss01' 1, 'cv11' 1;
-    -webkit-font-smoothing: antialiased;
-  }
-  html.dark body{ background:#080D1A; color:#F1F5F9; }
-
-  /* ---------- Reveal on scroll ---------- */
-  .reveal{ opacity:0; transform: translateY(28px); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
-  .reveal.in{ opacity:1; transform: translateY(0); }
-  .reveal-delay-1{ transition-delay: .08s; }
-  .reveal-delay-2{ transition-delay: .16s; }
-  .reveal-delay-3{ transition-delay: .24s; }
-  .reveal-delay-4{ transition-delay: .32s; }
-
-  @media (prefers-reduced-motion: reduce){
-    .reveal{ opacity:1 !important; transform:none !important; transition:none !important; }
-    *{ animation: none !important; }
-  }
-
-  /* ---------- Grain / dot grid backdrop ---------- */
-  .dot-grid{
-    background-image: radial-gradient(circle, rgba(100,116,139,0.28) 1px, transparent 1px);
-    background-size: 26px 26px;
-    -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black 40%, transparent 100%);
-            mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, black 40%, transparent 100%);
-  }
-
-  /* ---------- Radar signature motif ---------- */
-  .radar-ring{
-    position:absolute; border-radius:9999px; border:1px solid rgba(37,99,235,0.35);
-    animation: radarPulse 3.6s cubic-bezier(.22,.61,.36,1) infinite;
-  }
-  .radar-ring.r2{ animation-delay: 1.2s; }
-  .radar-ring.r3{ animation-delay: 2.4s; }
-  @keyframes radarPulse{
-    0%{ transform: scale(0.55); opacity: .55; }
-    80%{ opacity: 0; }
-    100%{ transform: scale(1.25); opacity: 0; }
-  }
-  .signal-badge{
-    animation: floatBadge 5s ease-in-out infinite;
-  }
-  .signal-badge.b2{ animation-delay: .8s; }
-  .signal-badge.b3{ animation-delay: 1.6s; }
-  @keyframes floatBadge{
-    0%,100%{ transform: translateY(0px); }
-    50%{ transform: translateY(-9px); }
-  }
-
-  .glass{
-    background: rgba(255,255,255,0.72);
-    backdrop-filter: blur(16px) saturate(160%);
-    -webkit-backdrop-filter: blur(16px) saturate(160%);
-    border: 1px solid rgba(15,23,42,0.06);
-  }
-  html.dark .glass{
-    background: rgba(15,23,42,0.62);
-    border: 1px solid rgba(255,255,255,0.08);
-  }
-
-  .text-gradient{
-    background: linear-gradient(100deg, #0F172A 20%, #2563EB 55%, #0F172A 85%);
-    -webkit-background-clip: text; background-clip:text; color:transparent;
-    background-size: 200% auto;
-  }
-  html.dark .text-gradient{
-    background: linear-gradient(100deg, #F8FAFC 20%, #60A5FA 55%, #F8FAFC 85%);
-    -webkit-background-clip: text; background-clip:text; color:transparent;
-  }
-
-  .card-hover{ transition: transform .45s cubic-bezier(.16,1,.3,1), box-shadow .45s cubic-bezier(.16,1,.3,1), border-color .3s ease; }
-  .card-hover:hover{ transform: translateY(-6px); }
-
-  .btn-primary{
-    background:#0F172A; color:#fff;
-    transition: transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s ease, background .3s ease;
-  }
-  .btn-primary:hover{ transform: translateY(-2px); box-shadow: 0 16px 40px -12px rgba(15,23,42,0.45); }
-  html.dark .btn-primary{ background:#F8FAFC; color:#0F172A; }
-  html.dark .btn-primary:hover{ box-shadow: 0 16px 40px -12px rgba(248,250,252,0.25); }
-
-  .btn-cta{
-    background: linear-gradient(135deg, #10B981, #059669);
-    color:#fff;
-    transition: transform .35s cubic-bezier(.16,1,.3,1), box-shadow .35s ease;
-    box-shadow: 0 8px 24px -8px rgba(16,185,129,0.55);
-  }
-  .btn-cta:hover{ transform: translateY(-2px); box-shadow: 0 20px 40px -12px rgba(16,185,129,0.6); }
-
-  .btn-glow{ overflow:hidden; }
-  .btn-glow::after{
-    content:''; position:absolute; inset:0; border-radius:9999px;
-    background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,0.35) 50%, transparent 70%);
-    background-size: 220% 100%; background-position: 120% 0;
-    animation: btnSheen 4.5s ease-in-out infinite;
-    pointer-events:none;
-  }
-  @keyframes btnSheen{
-    0%, 55%{ background-position: 120% 0; }
-    75%{ background-position: -20% 0; }
-    100%{ background-position: -20% 0; }
-  }
-
-  .btn-ghost{
-    border:1px solid rgba(15,23,42,0.14); color:#0F172A;
-    transition: border-color .3s ease, background .3s ease;
-  }
-  .btn-ghost:hover{ border-color: rgba(15,23,42,0.32); background: rgba(15,23,42,0.03); }
-  html.dark .btn-ghost{ border-color: rgba(248,250,252,0.16); color:#F8FAFC; }
-  html.dark .btn-ghost:hover{ border-color: rgba(248,250,252,0.32); background: rgba(248,250,252,0.05); }
-
-  /* Accordion */
-  .accordion-content{ max-height:0; overflow:hidden; transition: max-height .5s cubic-bezier(.16,1,.3,1); }
-  .accordion-item.open .accordion-content{ max-height: 320px; }
-  .accordion-item.open .chevron{ transform: rotate(45deg); }
-  .chevron{ transition: transform .35s cubic-bezier(.16,1,.3,1); }
-
-  /* timeline line */
-  .timeline-line{
-    background: linear-gradient(180deg, transparent, #2563EB 12%, #2563EB 88%, transparent);
-  }
-  .step-number{
-    opacity:0; transform: translate(-50%, 0) scale(.5);
-    transition: opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1);
-  }
-  .step-number.in{ opacity:1; transform: translate(-50%, 0) scale(1); }
-  @media (prefers-reduced-motion: reduce){
-    .step-number{ opacity:1 !important; transform: translate(-50%,0) scale(1) !important; transition:none !important; }
-  }
-
-  ::selection{ background: rgba(37,99,235,0.22); }
-
-  .noscroll-x{ overflow-x:clip; }
-
-  /* focus visibility */
-  a:focus-visible, button:focus-visible{ outline: 2px solid #2563EB; outline-offset: 3px; border-radius: 6px; }
+html{scroll-behavior:smooth}body{font-family:Inter,system-ui,sans-serif;background:#fff;color:#0F172A;-webkit-font-smoothing:antialiased}.dark body{background:#080D1A;color:#F8FAFC}.dot-grid{background-image:radial-gradient(circle,rgba(100,116,139,.22) 1px,transparent 1px);background-size:26px 26px}.glass{background:rgba(255,255,255,.78);backdrop-filter:blur(18px);border:1px solid rgba(15,23,42,.08)}.dark .glass{background:rgba(15,23,42,.72);border-color:rgba(255,255,255,.08)}.reveal{opacity:0;transform:translateY(22px);transition:.7s cubic-bezier(.16,1,.3,1)}.reveal.in{opacity:1;transform:none}.card{transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}.card:hover{transform:translateY(-5px)}.btn{transition:.25s ease}.btn:hover{transform:translateY(-2px)}.wa-float{position:fixed;right:20px;bottom:20px;z-index:60;background:#10B981;color:#fff;border-radius:999px;padding:13px 18px;box-shadow:0 18px 45px -15px rgba(5,150,105,.75)}@media(max-width:640px){.wa-float span{display:none}.wa-float{width:54px;height:54px;padding:0;display:grid;place-items:center}}
 </style>
 </head>
-
-<body class="noscroll-x">
-
-<!-- ======================= HEADER ======================= -->
-<header id="site-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-500">
+<body class="overflow-x-hidden">
+<header id="header" class="fixed top-0 inset-x-0 z-50 transition-all">
   <div class="max-w-7xl mx-auto px-6 lg:px-10">
-    <div id="header-inner" class="mt-4 flex items-center justify-between rounded-2xl px-5 py-3.5 transition-all duration-500">
-      <a href="#top" class="flex items-center gap-2.5 group">
-        <span class="relative flex h-8 w-8 items-center justify-center rounded-lg bg-navy-900 dark:bg-white">
-          <span class="h-2.5 w-2.5 rounded-full bg-go-500"></span>
-          <span class="absolute inset-0 rounded-lg border border-brand-500/40 group-hover:scale-125 transition-transform duration-500"></span>
-        </span>
+    <div id="header-inner" class="mt-4 flex items-center justify-between rounded-2xl px-5 py-3.5 transition-all">
+      <a href="#top" class="flex items-center gap-2.5">
+        <span class="relative flex h-8 w-8 items-center justify-center rounded-lg bg-navy-900 dark:bg-white"><span class="h-2.5 w-2.5 rounded-full bg-go-500"></span><span class="absolute inset-0 rounded-lg border border-brand-500/40"></span></span>
         <span class="text-[15px] font-bold tracking-tight text-navy-900 dark:text-white">Posiciona<span class="text-brand-600 dark:text-brand-400">Digital</span></span>
       </a>
-
-      <nav class="hidden lg:flex items-center gap-8 text-[14px] font-medium text-navy-600 dark:text-navy-300">
-        <a href="#solucao" class="hover:text-navy-900 dark:hover:text-white transition-colors">Soluções</a>
-        <a href="#processo" class="hover:text-navy-900 dark:hover:text-white transition-colors">Como funciona</a>
-        <a href="#projetos" class="hover:text-navy-900 dark:hover:text-white transition-colors">Projetos</a>
-        <a href="#depoimentos" class="hover:text-navy-900 dark:hover:text-white transition-colors">Depoimentos</a>
-        <a href="#faq" class="hover:text-navy-900 dark:hover:text-white transition-colors">FAQ</a>
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-navy-600 dark:text-navy-300">
+        <a href="#solucoes" class="hover:text-brand-600">Soluções</a>
+        <a href="#processo" class="hover:text-brand-600">Como funciona</a>
+        <a href="#projetos" class="hover:text-brand-600">Case real</a>
+        <a href="#faq" class="hover:text-brand-600">FAQ</a>
       </nav>
-
       <div class="flex items-center gap-3">
-        <button id="theme-toggle" aria-label="Alternar tema" class="h-9 w-9 grid place-items-center rounded-full border border-navy-900/10 dark:border-white/15 text-navy-700 dark:text-navy-200 hover:border-navy-900/25 dark:hover:border-white/30 transition-colors">
-          <svg id="icon-sun" class="h-[17px] w-[17px] hidden dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke-linecap="round"/></svg>
-          <svg id="icon-moon" class="h-[17px] w-[17px] dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke-linejoin="round"/></svg>
-        </button>
-        <a href="https://wa.me/55996484950?text=Ol%C3%A1!%20Quero%20meu%20diagn%C3%B3stico%20gratuito" target="_blank" rel="noopener" class="hidden sm:inline-flex btn-cta rounded-full px-5 py-2.5 text-[13.5px] font-semibold">Diagnóstico gratuito</a>
+        <button id="theme-toggle" aria-label="Alternar tema" class="h-9 w-9 grid place-items-center rounded-full border border-navy-900/10 dark:border-white/15">◐</button>
+        <a href="https://wa.me/5555999370338?text=Ol%C3%A1!%20Quero%20um%20diagn%C3%B3stico%20da%20minha%20presen%C3%A7a%20digital." target="_blank" rel="noopener" class="hidden sm:inline-flex btn rounded-full bg-go-500 px-5 py-2.5 text-[13.5px] font-semibold text-white">Diagnóstico gratuito</a>
       </div>
     </div>
   </div>
 </header>
 
-<!-- ======================= HERO ======================= -->
 <section id="top" class="relative pt-40 pb-28 lg:pt-48 lg:pb-36 overflow-hidden">
-  <div class="absolute inset-0 dot-grid pointer-events-none"></div>
-  <div class="absolute -top-40 left-1/2 -translate-x-1/2 h-[560px] w-[900px] rounded-full bg-brand-500/10 blur-[120px] pointer-events-none"></div>
-
-  <div class="max-w-7xl mx-auto px-6 lg:px-10 relative">
-    <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-16 items-center">
-
-      <!-- Copy -->
-      <div class="max-w-xl">
-        <div class="reveal inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-[13px] font-medium text-navy-600 dark:text-navy-300 mb-8">
-          <span class="h-1.5 w-1.5 rounded-full bg-go-500 animate-pulse"></span>
-          Diagnóstico de presença digital gratuito
-        </div>
-
-        <h1 class="reveal reveal-delay-1 text-[2.6rem] sm:text-6xl leading-[1.04] font-extrabold tracking-tightest text-navy-900 dark:text-white">
-          Sua empresa está <span class="text-gradient">perdendo clientes</span> todos os dias. Talvez você ainda não saiba.
-        </h1>
-
-        <p class="reveal reveal-delay-2 mt-7 text-lg leading-relaxed text-navy-600 dark:text-navy-300">
-          Ajudamos empresas locais a aparecer no Google, transmitir mais confiança e transformar visitantes em clientes através de presença digital estratégica.
-        </p>
-
-        <div class="reveal reveal-delay-3 mt-10 flex flex-wrap items-center gap-4">
-          <a href="https://wa.me/55996484950?text=Ol%C3%A1!%20Quero%20meu%20diagn%C3%B3stico%20gratuito" target="_blank" rel="noopener" class="btn-cta btn-glow relative rounded-full px-7 py-3.5 text-[15px] font-semibold">Solicitar diagnóstico gratuito</a>
-          <a href="#projetos" class="btn-ghost rounded-full px-7 py-3.5 text-[15px] font-semibold flex items-center gap-2">
-            Ver projetos
-            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </div>
-
-        <div class="reveal reveal-delay-3 mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-[13.5px] text-navy-500 dark:text-navy-400">
-          <span class="inline-flex items-center gap-1.5"><svg class="h-3.5 w-3.5 text-go-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Atendimento personalizado</span>
-          <span class="inline-flex items-center gap-1.5"><svg class="h-3.5 w-3.5 text-go-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Foco em negócios locais</span>
-          <span class="inline-flex items-center gap-1.5"><svg class="h-3.5 w-3.5 text-go-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg>Entrega rápida</span>
-        </div>
-
-        <div class="reveal reveal-delay-4 mt-14 flex items-center gap-8 text-navy-500 dark:text-navy-400">
-          <div>
-            <p class="text-2xl font-extrabold text-navy-900 dark:text-white tracking-tight">+120</p>
-            <p class="text-[13px]">empresas posicionadas</p>
-          </div>
-          <div class="h-9 w-px bg-navy-900/10 dark:bg-white/10"></div>
-          <div>
-            <p class="text-2xl font-extrabold text-navy-900 dark:text-white tracking-tight">4.9/5</p>
-            <p class="text-[13px]">avaliação média dos clientes</p>
-          </div>
-          <div class="h-9 w-px bg-navy-900/10 dark:bg-white/10"></div>
-          <div>
-            <p class="text-2xl font-extrabold text-navy-900 dark:text-white tracking-tight">30 dias</p>
-            <p class="text-[13px]">até publicação</p>
-          </div>
-        </div>
+  <div class="absolute inset-0 dot-grid opacity-70 pointer-events-none"></div>
+  <div class="absolute -top-40 left-1/2 -translate-x-1/2 h-[560px] w-[900px] rounded-full bg-brand-500/10 blur-[120px]"></div>
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 relative grid lg:grid-cols-[1.05fr_.95fr] gap-16 items-center">
+    <div class="max-w-xl">
+      <div class="reveal inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-[13px] font-medium text-navy-600 dark:text-navy-300 mb-8"><span class="h-1.5 w-1.5 rounded-full bg-go-500"></span>Diagnóstico de presença digital gratuito</div>
+      <h1 class="reveal text-[2.6rem] sm:text-6xl leading-[1.04] font-extrabold tracking-[-.045em] text-navy-900 dark:text-white">Sua empresa pode estar <span class="text-brand-600 dark:text-brand-400">perdendo clientes</span> antes mesmo do primeiro contato.</h1>
+      <p class="reveal mt-7 text-lg leading-relaxed text-navy-600 dark:text-navy-300">Ajudamos empresas locais a aparecer no Google, transmitir mais confiança e transformar visitantes em oportunidades através de presença digital estratégica.</p>
+      <div class="reveal mt-10 flex flex-wrap gap-4">
+        <a href="https://wa.me/5555999370338?text=Ol%C3%A1!%20Quero%20um%20diagn%C3%B3stico%20da%20minha%20presen%C3%A7a%20digital." target="_blank" rel="noopener" class="btn rounded-full bg-go-500 px-7 py-3.5 text-[15px] font-semibold text-white">Solicitar diagnóstico gratuito</a>
+        <a href="#projetos" class="btn rounded-full border border-navy-900/15 dark:border-white/15 px-7 py-3.5 text-[15px] font-semibold">Ver case real</a>
       </div>
-
-      <!-- Mockup with radar signature -->
-      <div class="reveal reveal-delay-2 relative mx-auto w-full max-w-lg">
-        <div class="radar-ring r1 inset-0 h-full w-full"></div>
-        <div class="radar-ring r2 inset-0 h-full w-full"></div>
-        <div class="radar-ring r3 inset-0 h-full w-full"></div>
-
-        <!-- Browser mockup -->
-        <div class="relative rounded-2xl border border-navy-900/10 dark:border-white/10 bg-white dark:bg-navy-800 shadow-[0_40px_80px_-30px_rgba(15,23,42,0.35)]">
-          <div class="flex items-center gap-1.5 px-4 py-3 border-b border-navy-900/8 dark:border-white/8">
-            <span class="h-2.5 w-2.5 rounded-full bg-navy-300 dark:bg-navy-600"></span>
-            <span class="h-2.5 w-2.5 rounded-full bg-navy-300 dark:bg-navy-600"></span>
-            <span class="h-2.5 w-2.5 rounded-full bg-navy-300 dark:bg-navy-600"></span>
-            <div class="ml-3 flex-1 h-6 rounded-md bg-navy-50 dark:bg-navy-900/60 flex items-center px-3">
-              <span class="text-[11px] text-navy-400">suaempresa.com.br</span>
-            </div>
-          </div>
-          <div class="p-6 space-y-4">
-            <div class="flex items-center justify-between">
-              <div class="h-3 w-24 rounded-full bg-navy-900/10 dark:bg-white/15"></div>
-              <div class="h-7 w-20 rounded-full bg-brand-600"></div>
-            </div>
-            <div class="h-32 rounded-xl bg-gradient-to-br from-brand-50 to-white dark:from-navy-900 dark:to-navy-800 border border-navy-900/5 dark:border-white/5 flex items-end p-4 gap-2">
-              <div class="w-1/5 h-[40%] rounded bg-brand-300/70"></div>
-              <div class="w-1/5 h-[70%] rounded bg-brand-400/80"></div>
-              <div class="w-1/5 h-[55%] rounded bg-brand-500/80"></div>
-              <div class="w-1/5 h-[90%] rounded bg-brand-600"></div>
-              <div class="w-1/5 h-[65%] rounded bg-brand-400/80"></div>
-            </div>
-            <div class="grid grid-cols-2 gap-3">
-              <div class="h-16 rounded-lg bg-navy-50 dark:bg-navy-900/60 border border-navy-900/5 dark:border-white/5"></div>
-              <div class="h-16 rounded-lg bg-navy-50 dark:bg-navy-900/60 border border-navy-900/5 dark:border-white/5"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Floating signal badges -->
-        <div class="signal-badge b1 absolute -left-10 top-10 glass rounded-xl px-3.5 py-2.5 flex items-center gap-2 shadow-lg">
-          <svg class="h-4 w-4 text-brand-600" viewBox="0 0 24 24" fill="currentColor"><path d="M21.35 11.1h-9.17v2.73h6.51c-.33 3.81-3.5 5.44-6.5 5.44C8.36 19.27 5 16.25 5 12s3.36-7.27 7.19-7.27c3.09 0 4.9 1.97 4.9 1.97L19 4.72S16.56 2 12.19 2C6.42 2 2.03 6.8 2.03 12s4.39 10 10.16 10c5.05 0 9.81-3.5 9.81-10.18 0-.85-.09-1.61-.65-1.72z"/></svg>
-          <span class="text-[12.5px] font-semibold text-navy-800 dark:text-navy-100">Google · sinal ativo</span>
-        </div>
-        <div class="signal-badge b2 absolute -right-8 top-1/3 glass rounded-xl px-3.5 py-2.5 flex items-center gap-2 shadow-lg">
-          <svg class="h-4 w-4 text-go-500" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5s-.6-1.5-.9-2c-.2-.5-.5-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.9 1.2 3.1c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.2-.1-.2-.3-.2-.6-.3z"/></svg>
-          <span class="text-[12.5px] font-semibold text-navy-800 dark:text-navy-100">WhatsApp conectado</span>
-        </div>
-        <div class="signal-badge b3 absolute -left-6 bottom-8 glass rounded-xl px-3.5 py-2.5 flex items-center gap-2 shadow-lg">
-          <svg class="h-4 w-4 text-brand-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 21s-7-5.2-7-11a7 7 0 1 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
-          <span class="text-[12.5px] font-semibold text-navy-800 dark:text-navy-100">+18 buscas locais/dia</span>
-        </div>
+      <div class="reveal mt-10 grid sm:grid-cols-3 gap-4 text-sm"><div class="rounded-xl border border-navy-900/8 dark:border-white/10 p-4"><b>Projeto real</b><br><span class="text-navy-500">Mecânica Batista</span></div><div class="rounded-xl border border-navy-900/8 dark:border-white/10 p-4"><b>São Gabriel/RS</b><br><span class="text-navy-500">atendimento local</span></div><div class="rounded-xl border border-navy-900/8 dark:border-white/10 p-4"><b>Site + WhatsApp</b><br><span class="text-navy-500">experiência integrada</span></div></div>
+    </div>
+    <div class="reveal relative">
+      <div class="rounded-3xl border border-navy-900/10 dark:border-white/10 bg-white dark:bg-navy-900 shadow-2xl overflow-hidden">
+        <div class="flex items-center gap-2 px-5 py-4 border-b border-navy-900/8 dark:border-white/8"><span class="h-2.5 w-2.5 rounded-full bg-red-400"></span><span class="h-2.5 w-2.5 rounded-full bg-amber-400"></span><span class="h-2.5 w-2.5 rounded-full bg-go-500"></span><span class="ml-3 text-xs text-navy-400">suaempresa.com.br</span></div>
+        <div class="p-8"><div class="h-4 w-32 rounded bg-navy-900/10 dark:bg-white/10"></div><div class="mt-5 h-44 rounded-2xl bg-gradient-to-br from-brand-50 to-white dark:from-navy-950 dark:to-navy-800 border border-navy-900/5 dark:border-white/5 flex items-end gap-3 p-6"><div class="w-1/5 h-[35%] bg-brand-400/50 rounded"></div><div class="w-1/5 h-[65%] bg-brand-500/60 rounded"></div><div class="w-1/5 h-[48%] bg-brand-400/70 rounded"></div><div class="w-1/5 h-[88%] bg-brand-600 rounded"></div><div class="w-1/5 h-[70%] bg-go-500/70 rounded"></div></div><div class="mt-4 grid grid-cols-2 gap-4"><div class="h-20 rounded-xl bg-navy-50 dark:bg-navy-800"></div><div class="h-20 rounded-xl bg-navy-50 dark:bg-navy-800"></div></div></div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ======================= PROBLEMA ======================= -->
-<section class="relative py-28 lg:py-36 bg-navy-950">
-  <div class="absolute inset-0 dot-grid opacity-20 pointer-events-none"></div>
-  <div class="max-w-7xl mx-auto px-6 lg:px-10 relative">
-    <div class="max-w-2xl">
-      <p class="reveal text-[13px] font-semibold tracking-widest uppercase text-brand-400">O problema</p>
-      <h2 class="reveal reveal-delay-1 mt-4 text-4xl sm:text-5xl font-extrabold tracking-tightest text-white leading-[1.08]">
-        Empresas perdem clientes todos os dias — antes mesmo de saber disso
-      </h2>
-      <p class="reveal reveal-delay-2 mt-6 text-lg text-navy-300 leading-relaxed">
-        O cliente já decidiu comprar. Ele só precisa encontrar uma empresa em quem confiar. Se a sua não aparece nesse momento, outra aparece no lugar dela.
-      </p>
-    </div>
-
+<section id="solucoes" class="py-28 bg-navy-950 text-white">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <p class="reveal text-[13px] uppercase tracking-widest font-semibold text-brand-400">Nossa solução</p>
+    <h2 class="reveal mt-4 max-w-2xl text-4xl sm:text-5xl font-extrabold tracking-[-.04em]">Tudo que sua empresa precisa para ser encontrada e transmitir confiança.</h2>
     <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-      <div class="reveal reveal-delay-1 card-hover rounded-2xl border border-white/8 bg-white/[0.03] p-7">
-        <svg class="h-6 w-6 text-brand-400 mb-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M9 21V9" stroke-linecap="round"/><path d="M13 13.5l1.8 1.8L18.5 12" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <p class="text-white font-semibold text-[15px] mb-2">Não possuem site</p>
-        <p class="text-navy-400 text-[14px] leading-relaxed">O cliente pesquisa, não encontra e segue para o concorrente que tem.</p>
-      </div>
-      <div class="reveal reveal-delay-2 card-hover rounded-2xl border border-white/8 bg-white/[0.03] p-7">
-        <svg class="h-6 w-6 text-brand-400 mb-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="2" width="16" height="20" rx="3"/><circle cx="12" cy="18" r="1"/></svg>
-        <p class="text-white font-semibold text-[15px] mb-2">Dependem só do Instagram</p>
-        <p class="text-navy-400 text-[14px] leading-relaxed">Um algoritmo decide quem vê seu trabalho — e ele muda sem aviso.</p>
-      </div>
-      <div class="reveal reveal-delay-3 card-hover rounded-2xl border border-white/8 bg-white/[0.03] p-7">
-        <svg class="h-6 w-6 text-brand-400 mb-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3" stroke-linecap="round"/></svg>
-        <p class="text-white font-semibold text-[15px] mb-2">Não aparecem no Google</p>
-        <p class="text-navy-400 text-[14px] leading-relaxed">Quem busca "perto de mim" só vê quem foi encontrado antes.</p>
-      </div>
-      <div class="reveal reveal-delay-4 card-hover rounded-2xl border border-white/8 bg-white/[0.03] p-7">
-        <svg class="h-6 w-6 text-brand-400 mb-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2l2.6 6.6L22 9l-5 5 1.5 7L12 17.5 5.5 21 7 14 2 9l7.4-.4z" stroke-linejoin="round"/></svg>
-        <p class="text-white font-semibold text-[15px] mb-2">Passam pouca credibilidade</p>
-        <p class="text-navy-400 text-[14px] leading-relaxed">Sem uma presença profissional, o preço vira a única comparação possível.</p>
-      </div>
+      <article class="reveal card rounded-2xl border border-white/10 bg-white/[.03] p-7"><div class="text-2xl mb-5">◫</div><h3 class="font-bold">Site profissional</h3><p class="mt-2 text-sm leading-relaxed text-navy-400">Um site rápido, responsivo e alinhado à realidade do seu negócio.</p></article>
+      <article class="reveal card rounded-2xl border border-white/10 bg-white/[.03] p-7"><div class="text-2xl mb-5">⌖</div><h3 class="font-bold">SEO Local</h3><p class="mt-2 text-sm leading-relaxed text-navy-400">Estrutura técnica para aumentar as chances de ser encontrado nas buscas da sua região.</p></article>
+      <article class="reveal card rounded-2xl border border-white/10 bg-white/[.03] p-7"><div class="text-2xl mb-5">✆</div><h3 class="font-bold">WhatsApp integrado</h3><p class="mt-2 text-sm leading-relaxed text-navy-400">Menos fricção entre o interesse do visitante e o primeiro contato comercial.</p></article>
+      <article class="reveal card rounded-2xl border border-white/10 bg-white/[.03] p-7"><div class="text-2xl mb-5">✓</div><h3 class="font-bold">Credibilidade digital</h3><p class="mt-2 text-sm leading-relaxed text-navy-400">Uma presença profissional ajuda o cliente a confiar antes mesmo de conversar com você.</p></article>
     </div>
   </div>
 </section>
 
-<!-- ======================= SOLUÇÃO ======================= -->
-<section id="solucao" class="py-28 lg:py-36 bg-white dark:bg-navy-950">
+<section id="processo" class="py-28 bg-white dark:bg-navy-950">
   <div class="max-w-7xl mx-auto px-6 lg:px-10">
-    <div class="max-w-2xl">
-      <p class="reveal text-[13px] font-semibold tracking-widest uppercase text-brand-600 dark:text-brand-400">Nossa solução</p>
-      <h2 class="reveal reveal-delay-1 mt-4 text-4xl sm:text-5xl font-extrabold tracking-tightest text-navy-900 dark:text-white leading-[1.08]">
-        Tudo que sua empresa precisa para ser encontrada
-      </h2>
-    </div>
-
-    <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-
-      <div class="reveal reveal-delay-1 card-hover rounded-2xl border border-navy-900/8 dark:border-white/10 p-7 hover:border-brand-500/40 hover:shadow-[0_20px_45px_-20px_rgba(37,99,235,0.35)]">
-        <div class="h-11 w-11 rounded-xl bg-brand-50 dark:bg-brand-500/10 grid place-items-center mb-6">
-          <svg class="h-5 w-5 text-brand-600 dark:text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3" stroke-linecap="round"/></svg>
-        </div>
-        <p class="font-bold text-[16px] text-navy-900 dark:text-white mb-2">Tenha uma presença profissional</p>
-        <p class="text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Um site sob medida, rápido e feito para converter visitante em cliente.</p>
-      </div>
-
-      <div class="reveal reveal-delay-2 card-hover rounded-2xl border border-navy-900/8 dark:border-white/10 p-7 hover:border-brand-500/40 hover:shadow-[0_20px_45px_-20px_rgba(37,99,235,0.35)]">
-        <div class="h-11 w-11 rounded-xl bg-brand-50 dark:bg-brand-500/10 grid place-items-center mb-6">
-          <svg class="h-5 w-5 text-brand-600 dark:text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
-        </div>
-        <p class="font-bold text-[16px] text-navy-900 dark:text-white mb-2">Seja encontrado no Google</p>
-        <p class="text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Estratégia de SEO Local para aparecer nas buscas de quem já está perto e pronto para comprar.</p>
-      </div>
-
-      <div class="reveal reveal-delay-3 card-hover rounded-2xl border border-navy-900/8 dark:border-white/10 p-7 hover:border-brand-500/40 hover:shadow-[0_20px_45px_-20px_rgba(37,99,235,0.35)]">
-        <div class="h-11 w-11 rounded-xl bg-brand-50 dark:bg-brand-500/10 grid place-items-center mb-6">
-          <svg class="h-5 w-5 text-brand-600 dark:text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-5.2-7-11a7 7 0 1 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
-        </div>
-        <p class="font-bold text-[16px] text-navy-900 dark:text-white mb-2">Passe mais credibilidade</p>
-        <p class="text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Perfil no Google Business otimizado com fotos, avaliações e informações que geram confiança.</p>
-      </div>
-
-      <div class="reveal reveal-delay-4 card-hover rounded-2xl border border-navy-900/8 dark:border-white/10 p-7 hover:border-brand-500/40 hover:shadow-[0_20px_45px_-20px_rgba(37,99,235,0.35)]">
-        <div class="h-11 w-11 rounded-xl bg-brand-50 dark:bg-brand-500/10 grid place-items-center mb-6">
-          <svg class="h-5 w-5 text-brand-600 dark:text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5s-.6-1.5-.9-2c-.2-.5-.5-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.9 1.2 3.1c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.2-.1-.2-.3-.2-.6-.3z"/><path d="M12 21a9 9 0 1 0-7.8-4.5L3 21l4.6-1.2A9 9 0 0 0 12 21z"/></svg>
-        </div>
-        <p class="font-bold text-[16px] text-navy-900 dark:text-white mb-2">Receba mais contatos</p>
-        <p class="text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Do primeiro clique à conversa no WhatsApp — sem fricção entre o site e o atendimento.</p>
-      </div>
-
-      <div class="reveal reveal-delay-1 card-hover rounded-2xl border border-navy-900/8 dark:border-white/10 p-7 hover:border-brand-500/40 hover:shadow-[0_20px_45px_-20px_rgba(37,99,235,0.35)]">
-        <div class="h-11 w-11 rounded-xl bg-brand-50 dark:bg-brand-500/10 grid place-items-center mb-6">
-          <svg class="h-5 w-5 text-brand-600 dark:text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7l8-4 8 4v6c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7z" stroke-linejoin="round"/></svg>
-        </div>
-        <p class="font-bold text-[16px] text-navy-900 dark:text-white mb-2">Não se preocupe com nada técnico</p>
-        <p class="text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Hospedagem segura e monitorada, sem você precisar entender de servidor.</p>
-      </div>
-
-      <div class="reveal reveal-delay-2 card-hover rounded-2xl border border-navy-900/8 dark:border-white/10 p-7 hover:border-brand-500/40 hover:shadow-[0_20px_45px_-20px_rgba(37,99,235,0.35)]">
-        <div class="h-11 w-11 rounded-xl bg-brand-50 dark:bg-brand-500/10 grid place-items-center mb-6">
-          <svg class="h-5 w-5 text-brand-600 dark:text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 8v4l2.5 2.5"/><circle cx="12" cy="12" r="9"/></svg>
-        </div>
-        <p class="font-bold text-[16px] text-navy-900 dark:text-white mb-2">Conte com suporte de verdade</p>
-        <p class="text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Time disponível quando você precisar ajustar algo — sem burocracia.</p>
-      </div>
-
-      <div class="reveal reveal-delay-3 card-hover rounded-2xl border border-navy-900/8 dark:border-white/10 p-7 hover:border-brand-500/40 hover:shadow-[0_20px_45px_-20px_rgba(37,99,235,0.35)]">
-        <div class="h-11 w-11 rounded-xl bg-brand-50 dark:bg-brand-500/10 grid place-items-center mb-6">
-          <svg class="h-5 w-5 text-brand-600 dark:text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" stroke-linejoin="round"/></svg>
-        </div>
-        <p class="font-bold text-[16px] text-navy-900 dark:text-white mb-2">Destaque-se da concorrência</p>
-        <p class="text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Carregamento rápido em qualquer conexão — o Google recompensa isso, e o cliente também.</p>
-      </div>
-
-      <div class="reveal reveal-delay-4 rounded-2xl bg-navy-900 dark:bg-brand-600 p-7 flex flex-col justify-between">
-        <div>
-          <p class="font-bold text-[16px] text-white mb-2">Pronto para começar?</p>
-          <p class="text-[14px] text-navy-300 dark:text-brand-100 leading-relaxed">Fale com a gente e receba um diagnóstico completo, sem custo.</p>
-        </div>
-        <a href="#cta" class="mt-6 inline-flex items-center gap-2 text-[13.5px] font-semibold text-white group">
-          Solicitar agora
-          <svg class="h-4 w-4 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-      </div>
-
+    <p class="reveal text-[13px] uppercase tracking-widest font-semibold text-brand-600 dark:text-brand-400">Como funciona</p>
+    <h2 class="reveal mt-4 text-4xl sm:text-5xl font-extrabold tracking-[-.04em]">Do diagnóstico à publicação, sem complicação.</h2>
+    <div class="mt-14 grid md:grid-cols-4 gap-5">
+      <article class="reveal rounded-2xl border border-navy-900/8 dark:border-white/10 p-7"><span class="text-sm font-bold text-brand-600">01</span><h3 class="mt-3 font-bold text-lg">Diagnóstico</h3><p class="mt-2 text-sm text-navy-500 dark:text-navy-400">Entendemos sua empresa, seu público e sua presença atual.</p></article>
+      <article class="reveal rounded-2xl border border-navy-900/8 dark:border-white/10 p-7"><span class="text-sm font-bold text-brand-600">02</span><h3 class="mt-3 font-bold text-lg">Estratégia</h3><p class="mt-2 text-sm text-navy-500 dark:text-navy-400">Definimos prioridades, estrutura e recursos do projeto.</p></article>
+      <article class="reveal rounded-2xl border border-navy-900/8 dark:border-white/10 p-7"><span class="text-sm font-bold text-brand-600">03</span><h3 class="mt-3 font-bold text-lg">Desenvolvimento</h3><p class="mt-2 text-sm text-navy-500 dark:text-navy-400">Construímos e ajustamos o site com foco em clareza e conversão.</p></article>
+      <article class="reveal rounded-2xl border border-navy-900/8 dark:border-white/10 p-7"><span class="text-sm font-bold text-go-600">04</span><h3 class="mt-3 font-bold text-lg">Publicação</h3><p class="mt-2 text-sm text-navy-500 dark:text-navy-400">O projeto vai ao ar no domínio da empresa e é testado nos principais dispositivos.</p></article>
     </div>
   </div>
 </section>
 
-<!-- ======================= COMO FUNCIONA ======================= -->
-<section id="processo" class="py-28 lg:py-36 bg-navy-50 dark:bg-navy-900/40">
+<section class="py-20 bg-navy-50 dark:bg-navy-900/40">
+  <div class="max-w-3xl mx-auto px-6 text-center">
+    <p class="reveal text-[13px] uppercase tracking-widest font-semibold text-brand-600 dark:text-brand-400">Portfólio responsável</p>
+    <h2 class="reveal mt-4 text-3xl sm:text-4xl font-extrabold tracking-[-.035em]">Trabalho real. Empresa real. Comunicação transparente.</h2>
+    <p class="reveal mt-5 text-[15px] text-navy-500 dark:text-navy-400 leading-relaxed">Nosso portfólio utiliza apenas projetos efetivamente desenvolvidos. Não publicamos depoimentos, métricas ou resultados que não tenham sido comprovados.</p>
+  </div>
+</section>
+
+<section id="projetos" class="py-28 bg-white dark:bg-navy-950">
   <div class="max-w-7xl mx-auto px-6 lg:px-10">
-    <div class="max-w-2xl">
-      <p class="reveal text-[13px] font-semibold tracking-widest uppercase text-brand-600 dark:text-brand-400">Como funciona</p>
-      <h2 class="reveal reveal-delay-1 mt-4 text-4xl sm:text-5xl font-extrabold tracking-tightest text-navy-900 dark:text-white leading-[1.08]">
-        Um caminho claro, do diagnóstico ao crescimento
-      </h2>
-    </div>
+    <p class="reveal text-[13px] uppercase tracking-widest font-semibold text-brand-600 dark:text-brand-400">Case real em destaque</p>
+    <h2 class="reveal mt-4 text-4xl sm:text-5xl font-extrabold tracking-[-.04em]">Mecânica e Guinchos Batista</h2>
+    <p class="reveal mt-5 max-w-2xl text-[15px] text-navy-500 dark:text-navy-400 leading-relaxed">Presença digital desenvolvida para uma operação com mecânica leve e pesada, guincho e munck 24h, transporte e atendimento a empresas e frotas.</p>
 
-    <div class="mt-20 relative">
-      <div class="hidden lg:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px timeline-line"></div>
-
-      <div class="space-y-14 lg:space-y-0">
-
-        <div class="reveal reveal-delay-1 relative lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
-          <div class="step-number reveal-delay-1 hidden lg:grid absolute left-1/2 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-white dark:bg-navy-900 border-2 border-brand-500 place-items-center font-bold text-brand-600 dark:text-brand-400 z-10">01</div>
-          <div class="lg:text-right lg:pr-16">
-            <span class="text-[13px] font-semibold text-brand-600 dark:text-brand-400">Etapa 01</span>
-            <h3 class="mt-2 text-2xl font-bold text-navy-900 dark:text-white">Diagnóstico</h3>
-            <p class="mt-3 text-navy-500 dark:text-navy-400 leading-relaxed">Analisamos onde sua empresa está hoje: site, Google, redes sociais e concorrência direta.</p>
-          </div>
-          <div class="hidden lg:block"></div>
+    <article class="reveal mt-14 grid lg:grid-cols-[1.1fr_.9fr] rounded-3xl overflow-hidden border border-navy-900/8 dark:border-white/10 shadow-[0_35px_80px_-45px_rgba(15,23,42,.45)]">
+      <a href="https://batistaguinchoemecanica.com.br/" target="_blank" rel="noopener" class="group relative min-h-[380px] lg:min-h-[540px] bg-gradient-to-br from-navy-950 via-navy-900 to-brand-700 p-7 sm:p-10 flex items-center justify-center">
+        <div class="absolute inset-0 dot-grid opacity-20"></div>
+        <div class="relative w-full max-w-xl rounded-2xl overflow-hidden bg-white shadow-2xl transition-transform duration-500 group-hover:scale-[1.02]">
+          <div class="h-11 bg-navy-100 flex items-center gap-2 px-4"><span class="h-2.5 w-2.5 rounded-full bg-red-400"></span><span class="h-2.5 w-2.5 rounded-full bg-amber-400"></span><span class="h-2.5 w-2.5 rounded-full bg-go-500"></span><span class="ml-3 text-[10px] text-navy-400">batistaguinchoemecanica.com.br</span></div>
+          <div class="bg-[#0a0a0b] px-7 py-14 text-white"><p class="text-[11px] uppercase tracking-[.2em] text-red-400">Mecânica • Guincho 24h • Munck</p><p class="mt-4 text-3xl font-extrabold leading-tight">Estrutura e confiança quando você mais precisa.</p><div class="mt-7 inline-flex rounded-full bg-red-600 px-5 py-2.5 text-xs font-semibold">Chamar no WhatsApp</div></div>
+          <div class="grid grid-cols-3 gap-3 p-6"><div class="h-16 rounded-lg bg-navy-100"></div><div class="h-16 rounded-lg bg-red-50"></div><div class="h-16 rounded-lg bg-navy-100"></div></div>
         </div>
-
-        <div class="reveal reveal-delay-2 relative lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
-          <div class="step-number reveal-delay-2 hidden lg:grid absolute left-1/2 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-white dark:bg-navy-900 border-2 border-brand-500 place-items-center font-bold text-brand-600 dark:text-brand-400 z-10">02</div>
-          <div class="hidden lg:block"></div>
-          <div class="lg:pl-16">
-            <span class="text-[13px] font-semibold text-brand-600 dark:text-brand-400">Etapa 02</span>
-            <h3 class="mt-2 text-2xl font-bold text-navy-900 dark:text-white">Estratégia</h3>
-            <p class="mt-3 text-navy-500 dark:text-navy-400 leading-relaxed">Definimos as prioridades certas para o seu segmento e o seu orçamento — sem desperdício.</p>
-          </div>
-        </div>
-
-        <div class="reveal reveal-delay-3 relative lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
-          <div class="step-number reveal-delay-3 hidden lg:grid absolute left-1/2 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-white dark:bg-navy-900 border-2 border-brand-500 place-items-center font-bold text-brand-600 dark:text-brand-400 z-10">03</div>
-          <div class="lg:text-right lg:pr-16">
-            <span class="text-[13px] font-semibold text-brand-600 dark:text-brand-400">Etapa 03</span>
-            <h3 class="mt-2 text-2xl font-bold text-navy-900 dark:text-white">Desenvolvimento</h3>
-            <p class="mt-3 text-navy-500 dark:text-navy-400 leading-relaxed">Construímos o site e as estruturas de SEO com acompanhamento visível em cada etapa.</p>
-          </div>
-          <div class="hidden lg:block"></div>
-        </div>
-
-        <div class="reveal reveal-delay-4 relative lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
-          <div class="step-number reveal-delay-4 hidden lg:grid absolute left-1/2 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-white dark:bg-navy-900 border-2 border-brand-500 place-items-center font-bold text-brand-600 dark:text-brand-400 z-10">04</div>
-          <div class="hidden lg:block"></div>
-          <div class="lg:pl-16">
-            <span class="text-[13px] font-semibold text-brand-600 dark:text-brand-400">Etapa 04</span>
-            <h3 class="mt-2 text-2xl font-bold text-navy-900 dark:text-white">Publicação</h3>
-            <p class="mt-3 text-navy-500 dark:text-navy-400 leading-relaxed">Seu site vai ao ar com tudo configurado: analytics, WhatsApp, Google Business e mais.</p>
-          </div>
-        </div>
-
-        <div class="reveal relative lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
-          <div class="step-number hidden lg:grid absolute left-1/2 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full bg-white dark:bg-navy-900 border-2 border-go-500 place-items-center font-bold text-go-600 dark:text-go-400 z-10">05</div>
-          <div class="lg:text-right lg:pr-16">
-            <span class="text-[13px] font-semibold text-go-600 dark:text-go-400">Etapa 05</span>
-            <h3 class="mt-2 text-2xl font-bold text-navy-900 dark:text-white">Crescimento</h3>
-            <p class="mt-3 text-navy-500 dark:text-navy-400 leading-relaxed">Acompanhamos os resultados mês a mês e ajustamos a estratégia para ganhar mais espaço.</p>
-          </div>
-          <div class="hidden lg:block"></div>
-        </div>
-
+        <span class="absolute top-5 left-5 rounded-full border border-white/15 bg-black/40 px-3.5 py-2 text-[11px] font-semibold uppercase tracking-widest text-white backdrop-blur">Projeto real</span>
+      </a>
+      <div class="p-8 sm:p-10 lg:p-12 flex flex-col justify-center">
+        <div class="flex flex-wrap gap-2"><span class="rounded-full bg-go-500/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-widest text-go-600 dark:text-go-400">Projeto contratado</span><span class="rounded-full bg-brand-500/10 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-widest text-brand-700 dark:text-brand-300">São Gabriel/RS</span></div>
+        <h3 class="mt-6 text-2xl sm:text-3xl font-extrabold tracking-tight">Uma operação ampla organizada em uma experiência digital clara.</h3>
+        <p class="mt-5 text-[15px] leading-relaxed text-navy-600 dark:text-navy-300">O projeto apresenta os diferentes serviços da Batista e reduz o caminho entre a necessidade do cliente e o atendimento correto, com destaque para guincho 24h, mecânica, linha pesada e atendimento corporativo.</p>
+        <div class="mt-7 flex flex-wrap gap-2"><span class="rounded-full border border-navy-900/10 dark:border-white/10 px-3 py-1.5 text-xs">Site responsivo</span><span class="rounded-full border border-navy-900/10 dark:border-white/10 px-3 py-1.5 text-xs">WhatsApp integrado</span><span class="rounded-full border border-navy-900/10 dark:border-white/10 px-3 py-1.5 text-xs">Pré-chamado</span><span class="rounded-full border border-navy-900/10 dark:border-white/10 px-3 py-1.5 text-xs">Linha leve e pesada</span><span class="rounded-full border border-navy-900/10 dark:border-white/10 px-3 py-1.5 text-xs">B2B</span><span class="rounded-full border border-navy-900/10 dark:border-white/10 px-3 py-1.5 text-xs">SEO técnico</span></div>
+        <div class="mt-9 flex flex-wrap gap-3"><a href="https://batistaguinchoemecanica.com.br/" target="_blank" rel="noopener" class="btn rounded-full bg-navy-900 dark:bg-white dark:text-navy-900 px-6 py-3 text-sm font-semibold text-white">Ver site ao vivo</a><a href="case-batista.html" class="btn rounded-full border border-navy-900/15 dark:border-white/15 px-6 py-3 text-sm font-semibold">Ver detalhes do case</a></div>
       </div>
+    </article>
+  </div>
+</section>
+
+<section id="faq" class="py-28 bg-navy-50 dark:bg-navy-900/40">
+  <div class="max-w-3xl mx-auto px-6">
+    <div class="text-center"><p class="reveal text-[13px] uppercase tracking-widest font-semibold text-brand-600 dark:text-brand-400">Perguntas frequentes</p><h2 class="reveal mt-4 text-4xl sm:text-5xl font-extrabold tracking-[-.04em]">Tire suas dúvidas</h2></div>
+    <div class="mt-12 space-y-4">
+      <details class="reveal rounded-2xl border border-navy-900/8 dark:border-white/10 bg-white dark:bg-navy-950 p-6"><summary class="font-semibold cursor-pointer">Quanto tempo leva para um site ficar pronto?</summary><p class="mt-4 text-sm leading-relaxed text-navy-500 dark:text-navy-400">O prazo é definido em proposta conforme a complexidade e os materiais necessários para cada projeto.</p></details>
+      <details class="reveal rounded-2xl border border-navy-900/8 dark:border-white/10 bg-white dark:bg-navy-950 p-6"><summary class="font-semibold cursor-pointer">O diagnóstico gratuito tem compromisso?</summary><p class="mt-4 text-sm leading-relaxed text-navy-500 dark:text-navy-400">Não. O objetivo é mostrar oportunidades e orientar o próximo passo. A decisão de contratar é sempre sua.</p></details>
+      <details class="reveal rounded-2xl border border-navy-900/8 dark:border-white/10 bg-white dark:bg-navy-950 p-6"><summary class="font-semibold cursor-pointer">Vocês cuidam de domínio e hospedagem?</summary><p class="mt-4 text-sm leading-relaxed text-navy-500 dark:text-navy-400">Sim, quando esses itens fazem parte do escopo contratado. Tudo fica descrito de forma clara na proposta e no contrato.</p></details>
     </div>
   </div>
 </section>
 
-<!-- ======================= DIFERENCIAIS ======================= -->
-<section class="py-28 lg:py-36 bg-white dark:bg-navy-950">
-  <div class="max-w-7xl mx-auto px-6 lg:px-10">
-    <div class="max-w-2xl">
-      <p class="reveal text-[13px] font-semibold tracking-widest uppercase text-brand-600 dark:text-brand-400">Diferenciais</p>
-      <h2 class="reveal reveal-delay-1 mt-4 text-4xl sm:text-5xl font-extrabold tracking-tightest text-navy-900 dark:text-white leading-[1.08]">
-        Por que escolher a Posiciona Digital?
-      </h2>
-    </div>
-
-    <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-
-      <div class="reveal reveal-delay-1 card-hover rounded-2xl border border-navy-900/8 dark:border-white/10 p-7 hover:border-brand-500/40 hover:shadow-[0_20px_45px_-20px_rgba(37,99,235,0.35)]">
-        <div class="h-11 w-11 rounded-xl bg-brand-50 dark:bg-brand-500/10 grid place-items-center mb-6">
-          <svg class="h-5 w-5 text-brand-600 dark:text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        </div>
-        <p class="font-bold text-[16px] text-navy-900 dark:text-white mb-2">Estratégia antes da execução</p>
-        <p class="text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Nenhuma linha é escrita antes de entendermos o seu negócio e o seu cliente.</p>
-      </div>
-
-      <div class="reveal reveal-delay-2 card-hover rounded-2xl border border-navy-900/8 dark:border-white/10 p-7 hover:border-brand-500/40 hover:shadow-[0_20px_45px_-20px_rgba(37,99,235,0.35)]">
-        <div class="h-11 w-11 rounded-xl bg-brand-50 dark:bg-brand-500/10 grid place-items-center mb-6">
-          <svg class="h-5 w-5 text-brand-600 dark:text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z" stroke-linejoin="round"/></svg>
-        </div>
-        <p class="font-bold text-[16px] text-navy-900 dark:text-white mb-2">Sites rápidos</p>
-        <p class="text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Performance de carregamento pensada para reter o visitante nos primeiros segundos.</p>
-      </div>
-
-      <div class="reveal reveal-delay-3 card-hover rounded-2xl border border-navy-900/8 dark:border-white/10 p-7 hover:border-brand-500/40 hover:shadow-[0_20px_45px_-20px_rgba(37,99,235,0.35)]">
-        <div class="h-11 w-11 rounded-xl bg-brand-50 dark:bg-brand-500/10 grid place-items-center mb-6">
-          <svg class="h-5 w-5 text-brand-600 dark:text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z" stroke-linejoin="round"/></svg>
-        </div>
-        <p class="font-bold text-[16px] text-navy-900 dark:text-white mb-2">Design Premium</p>
-        <p class="text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Layouts sob medida, sem templates genéricos — feitos para a identidade da sua empresa.</p>
-      </div>
-
-      <div class="reveal reveal-delay-1 card-hover rounded-2xl border border-navy-900/8 dark:border-white/10 p-7 hover:border-brand-500/40 hover:shadow-[0_20px_45px_-20px_rgba(37,99,235,0.35)]">
-        <div class="h-11 w-11 rounded-xl bg-brand-50 dark:bg-brand-500/10 grid place-items-center mb-6">
-          <svg class="h-5 w-5 text-brand-600 dark:text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
-        </div>
-        <p class="font-bold text-[16px] text-navy-900 dark:text-white mb-2">SEO Local</p>
-        <p class="text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Estrutura técnica e de conteúdo pensada para aparecer nas buscas da sua região.</p>
-      </div>
-
-      <div class="reveal reveal-delay-2 card-hover rounded-2xl border border-navy-900/8 dark:border-white/10 p-7 hover:border-brand-500/40 hover:shadow-[0_20px_45px_-20px_rgba(37,99,235,0.35)]">
-        <div class="h-11 w-11 rounded-xl bg-brand-50 dark:bg-brand-500/10 grid place-items-center mb-6">
-          <svg class="h-5 w-5 text-brand-600 dark:text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 8v4l2.5 2.5"/><circle cx="12" cy="12" r="9"/></svg>
-        </div>
-        <p class="font-bold text-[16px] text-navy-900 dark:text-white mb-2">Suporte</p>
-        <p class="text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Time disponível quando você precisar ajustar algo — sem burocracia.</p>
-      </div>
-
-      <div class="reveal reveal-delay-3 card-hover rounded-2xl border border-navy-900/8 dark:border-white/10 p-7 hover:border-brand-500/40 hover:shadow-[0_20px_45px_-20px_rgba(37,99,235,0.35)]">
-        <div class="h-11 w-11 rounded-xl bg-brand-50 dark:bg-brand-500/10 grid place-items-center mb-6">
-          <svg class="h-5 w-5 text-brand-600 dark:text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7l8-4 8 4v6c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V7z" stroke-linejoin="round"/></svg>
-        </div>
-        <p class="font-bold text-[16px] text-navy-900 dark:text-white mb-2">Entrega Ágil</p>
-        <p class="text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Processo enxuto, com marcos claros do diagnóstico até a publicação do site.</p>
-      </div>
-
-    </div>
-  </div>
+<section class="py-28 bg-navy-950 text-white">
+  <div class="max-w-3xl mx-auto px-6 text-center"><h2 class="reveal text-4xl sm:text-5xl font-extrabold tracking-[-.04em]">Quer construir uma presença digital profissional para sua empresa?</h2><p class="reveal mt-5 text-navy-300">Fale conosco e receba uma avaliação inicial da sua presença digital.</p><a href="https://wa.me/5555999370338?text=Ol%C3%A1!%20Vi%20o%20case%20da%20Mec%C3%A2nica%20Batista%20e%20quero%20conversar%20sobre%20meu%20projeto." target="_blank" rel="noopener" class="reveal btn inline-flex mt-9 rounded-full bg-go-500 px-7 py-3.5 font-semibold">Conversar pelo WhatsApp</a></div>
 </section>
 
-<!-- ======================= PROVA DE CONFIANÇA ======================= -->
-<section class="py-24 lg:py-28 bg-navy-50 dark:bg-navy-900/40">
-  <div class="max-w-3xl mx-auto px-6 lg:px-10 text-center">
-    <p class="reveal text-[13px] font-semibold tracking-widest uppercase text-brand-600 dark:text-brand-400">Projetos</p>
-    <h2 class="reveal reveal-delay-1 mt-4 text-3xl sm:text-4xl font-extrabold tracking-tightest text-navy-900 dark:text-white leading-[1.15]">
-      Construímos soluções para empresas que querem crescer.
-    </h2>
-    <p class="reveal reveal-delay-2 mt-5 text-[15px] text-navy-500 dark:text-navy-400 leading-relaxed">
-      Estamos expandindo nosso portfólio com projetos desenvolvidos para negócios locais que buscam evoluir sua presença digital.
-    </p>
+<footer class="bg-navy-950 border-t border-white/10 text-white">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 py-14 grid md:grid-cols-3 gap-10">
+    <div><div class="flex items-center gap-2.5"><span class="h-8 w-8 rounded-lg bg-white grid place-items-center"><span class="h-2.5 w-2.5 rounded-full bg-go-500"></span></span><b>Posiciona<span class="text-brand-400">Digital</span></b></div><p class="mt-4 text-sm text-navy-400">Presença digital para empresas que querem ser encontradas e transmitir confiança.</p></div>
+    <div><p class="font-semibold text-sm">Contato</p><p class="mt-3 text-sm text-navy-400">São Gabriel/RS</p><a href="https://wa.me/5555999370338" target="_blank" rel="noopener" class="mt-2 inline-block text-sm text-navy-400 hover:text-white">(55) 99937-0338</a></div>
+    <div><p class="font-semibold text-sm">Transparência</p><p class="mt-3 text-sm leading-relaxed text-navy-400">Os projetos e informações apresentados neste site são publicados sem resultados ou depoimentos inventados.</p></div>
   </div>
-</section>
-
-<!-- ======================= PROJETOS ======================= -->
-<section id="projetos" class="py-28 lg:py-36 bg-white dark:bg-navy-950">
-  <div class="max-w-7xl mx-auto px-6 lg:px-10">
-    <div class="flex items-end justify-between flex-wrap gap-6">
-      <div class="max-w-2xl">
-        <p class="reveal text-[13px] font-semibold tracking-widest uppercase text-brand-600 dark:text-brand-400">Projetos</p>
-        <h2 class="reveal reveal-delay-1 mt-4 text-4xl sm:text-5xl font-extrabold tracking-tightest text-navy-900 dark:text-white leading-[1.08]">
-          Empresas que já foram posicionadas
-        </h2>
-      </div>
-    </div>
-
-    <div class="mt-16 grid md:grid-cols-3 gap-6">
-
-      <div class="reveal reveal-delay-1 card-hover group rounded-2xl overflow-hidden border border-navy-900/8 dark:border-white/10">
-        <div class="h-56 bg-gradient-to-br from-brand-100 to-brand-300 dark:from-brand-900/40 dark:to-brand-700/30 relative overflow-hidden">
-          <div class="absolute inset-0 flex items-center justify-center">
-            <svg class="h-16 w-16 text-white/70 group-hover:scale-110 transition-transform duration-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg>
-          </div>
-        </div>
-        <div class="p-6">
-          <span class="text-[11.5px] font-semibold tracking-widest uppercase text-brand-600 dark:text-brand-400">Clínica odontológica</span>
-          <p class="mt-2 font-bold text-[17px] text-navy-900 dark:text-white">Site institucional + SEO Local</p>
-          <p class="mt-2 text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Presença completa para uma clínica que só recebia indicação boca a boca.</p>
-          <div class="mt-4 flex flex-wrap gap-1.5">
-            <span class="text-[11px] font-medium px-2.5 py-1 rounded-full bg-brand-50 dark:bg-brand-500/10 text-brand-700 dark:text-brand-300">Site institucional</span>
-            <span class="text-[11px] font-medium px-2.5 py-1 rounded-full bg-brand-50 dark:bg-brand-500/10 text-brand-700 dark:text-brand-300">SEO Local</span>
-            <span class="text-[11px] font-medium px-2.5 py-1 rounded-full bg-brand-50 dark:bg-brand-500/10 text-brand-700 dark:text-brand-300">Google Business</span>
-          </div>
-          <a href="#" class="mt-5 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-navy-900 dark:text-white group/link">
-            Ver estudo de caso
-            <svg class="h-3.5 w-3.5 group-hover/link:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="reveal reveal-delay-2 card-hover group rounded-2xl overflow-hidden border border-navy-900/8 dark:border-white/10">
-        <div class="h-56 bg-gradient-to-br from-navy-700 to-navy-900 relative overflow-hidden">
-          <div class="absolute inset-0 flex items-center justify-center">
-            <svg class="h-16 w-16 text-white/60 group-hover:scale-110 transition-transform duration-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h1M9 13h1M14 9h1M14 13h1"/></svg>
-          </div>
-        </div>
-        <div class="p-6">
-          <span class="text-[11.5px] font-semibold tracking-widest uppercase text-brand-600 dark:text-brand-400">Escritório de advocacia</span>
-          <p class="mt-2 font-bold text-[17px] text-navy-900 dark:text-white">Site premium + Google Business</p>
-          <p class="mt-2 text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Autoridade visual para conquistar casos de maior valor na região.</p>
-          <div class="mt-4 flex flex-wrap gap-1.5">
-            <span class="text-[11px] font-medium px-2.5 py-1 rounded-full bg-brand-50 dark:bg-brand-500/10 text-brand-700 dark:text-brand-300">Site premium</span>
-            <span class="text-[11px] font-medium px-2.5 py-1 rounded-full bg-brand-50 dark:bg-brand-500/10 text-brand-700 dark:text-brand-300">Google Business</span>
-            <span class="text-[11px] font-medium px-2.5 py-1 rounded-full bg-brand-50 dark:bg-brand-500/10 text-brand-700 dark:text-brand-300">Copywriting</span>
-          </div>
-          <a href="#" class="mt-5 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-navy-900 dark:text-white group/link">
-            Ver estudo de caso
-            <svg class="h-3.5 w-3.5 group-hover/link:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="reveal reveal-delay-3 card-hover group rounded-2xl overflow-hidden border border-navy-900/8 dark:border-white/10">
-        <div class="h-56 bg-gradient-to-br from-go-400/70 to-brand-500/60 relative overflow-hidden">
-          <div class="absolute inset-0 flex items-center justify-center">
-            <svg class="h-16 w-16 text-white/70 group-hover:scale-110 transition-transform duration-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M6 2l1.5 4.5L12 8l-4.5 1.5L6 14l-1.5-4.5L0 8l4.5-1.5L6 2z"/><circle cx="17" cy="16" r="4"/></svg>
-          </div>
-        </div>
-        <div class="p-6">
-          <span class="text-[11.5px] font-semibold tracking-widest uppercase text-brand-600 dark:text-brand-400">Loja de móveis planejados</span>
-          <p class="mt-2 font-bold text-[17px] text-navy-900 dark:text-white">E-commerce + WhatsApp integrado</p>
-          <p class="mt-2 text-[14px] text-navy-500 dark:text-navy-400 leading-relaxed">Orçamentos direto pelo site, sem perder nenhum lead no caminho.</p>
-          <div class="mt-4 flex flex-wrap gap-1.5">
-            <span class="text-[11px] font-medium px-2.5 py-1 rounded-full bg-brand-50 dark:bg-brand-500/10 text-brand-700 dark:text-brand-300">E-commerce</span>
-            <span class="text-[11px] font-medium px-2.5 py-1 rounded-full bg-brand-50 dark:bg-brand-500/10 text-brand-700 dark:text-brand-300">WhatsApp integrado</span>
-            <span class="text-[11px] font-medium px-2.5 py-1 rounded-full bg-brand-50 dark:bg-brand-500/10 text-brand-700 dark:text-brand-300">SEO Local</span>
-          </div>
-          <a href="#" class="mt-5 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-navy-900 dark:text-white group/link">
-            Ver estudo de caso
-            <svg class="h-3.5 w-3.5 group-hover/link:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ======================= DEPOIMENTOS ======================= -->
-<section id="depoimentos" class="py-28 lg:py-36 bg-navy-50 dark:bg-navy-900/40">
-  <div class="max-w-7xl mx-auto px-6 lg:px-10">
-    <div class="max-w-2xl mx-auto text-center">
-      <p class="reveal text-[13px] font-semibold tracking-widest uppercase text-brand-600 dark:text-brand-400">Depoimentos</p>
-      <h2 class="reveal reveal-delay-1 mt-4 text-4xl sm:text-5xl font-extrabold tracking-tightest text-navy-900 dark:text-white leading-[1.08]">
-        Quem posicionou, sentiu a diferença
-      </h2>
-    </div>
-
-    <div class="mt-16 grid md:grid-cols-3 gap-6">
-
-      <div class="reveal reveal-delay-1 card-hover rounded-2xl bg-white dark:bg-navy-800 border border-navy-900/8 dark:border-white/10 p-8">
-        <div class="flex gap-1 mb-5">
-          <svg class="h-4 w-4 text-go-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9l-5.6 3.1 1.4-6.2L1 7.5l6.4-.6z"/></svg>
-          <svg class="h-4 w-4 text-go-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9l-5.6 3.1 1.4-6.2L1 7.5l6.4-.6z"/></svg>
-          <svg class="h-4 w-4 text-go-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9l-5.6 3.1 1.4-6.2L1 7.5l6.4-.6z"/></svg>
-          <svg class="h-4 w-4 text-go-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9l-5.6 3.1 1.4-6.2L1 7.5l6.4-.6z"/></svg>
-          <svg class="h-4 w-4 text-go-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9l-5.6 3.1 1.4-6.2L1 7.5l6.4-.6z"/></svg>
-        </div>
-        <p class="text-[15px] text-navy-700 dark:text-navy-200 leading-relaxed">"Em três meses passamos a aparecer nas primeiras buscas da nossa cidade. O telefone não para de tocar."</p>
-        <div class="mt-6 flex items-center gap-3">
-          <div class="h-11 w-11 rounded-full bg-gradient-to-br from-brand-400 to-brand-600"></div>
-          <div>
-            <p class="text-[14px] font-semibold text-navy-900 dark:text-white">Marina Souza</p>
-            <p class="text-[12.5px] text-navy-500 dark:text-navy-400">Clínica Sorriso Pleno</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="reveal reveal-delay-2 card-hover rounded-2xl bg-white dark:bg-navy-800 border border-navy-900/8 dark:border-white/10 p-8">
-        <div class="flex gap-1 mb-5">
-          <svg class="h-4 w-4 text-go-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9l-5.6 3.1 1.4-6.2L1 7.5l6.4-.6z"/></svg>
-          <svg class="h-4 w-4 text-go-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9l-5.6 3.1 1.4-6.2L1 7.5l6.4-.6z"/></svg>
-          <svg class="h-4 w-4 text-go-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9l-5.6 3.1 1.4-6.2L1 7.5l6.4-.6z"/></svg>
-          <svg class="h-4 w-4 text-go-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9l-5.6 3.1 1.4-6.2L1 7.5l6.4-.6z"/></svg>
-          <svg class="h-4 w-4 text-go-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9l-5.6 3.1 1.4-6.2L1 7.5l6.4-.6z"/></svg>
-        </div>
-        <p class="text-[15px] text-navy-700 dark:text-navy-200 leading-relaxed">"O site parece de empresa grande. Isso mudou a forma como os clientes nos veem antes mesmo da primeira reunião."</p>
-        <div class="mt-6 flex items-center gap-3">
-          <div class="h-11 w-11 rounded-full bg-gradient-to-br from-navy-600 to-navy-900"></div>
-          <div>
-            <p class="text-[14px] font-semibold text-navy-900 dark:text-white">Rafael Torres</p>
-            <p class="text-[12.5px] text-navy-500 dark:text-navy-400">Torres & Associados</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="reveal reveal-delay-3 card-hover rounded-2xl bg-white dark:bg-navy-800 border border-navy-900/8 dark:border-white/10 p-8">
-        <div class="flex gap-1 mb-5">
-          <svg class="h-4 w-4 text-go-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9l-5.6 3.1 1.4-6.2L1 7.5l6.4-.6z"/></svg>
-          <svg class="h-4 w-4 text-go-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9l-5.6 3.1 1.4-6.2L1 7.5l6.4-.6z"/></svg>
-          <svg class="h-4 w-4 text-go-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9l-5.6 3.1 1.4-6.2L1 7.5l6.4-.6z"/></svg>
-          <svg class="h-4 w-4 text-go-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9l-5.6 3.1 1.4-6.2L1 7.5l6.4-.6z"/></svg>
-          <svg class="h-4 w-4 text-go-500" fill="currentColor" viewBox="0 0 20 20"><path d="M10 1l2.6 5.9 6.4.6-4.8 4.3 1.4 6.2L10 14.9l-5.6 3.1 1.4-6.2L1 7.5l6.4-.6z"/></svg>
-        </div>
-        <p class="text-[15px] text-navy-700 dark:text-navy-200 leading-relaxed">"Os orçamentos pelo WhatsApp triplicaram depois que o site foi ao ar. O processo todo foi transparente do início ao fim."</p>
-        <div class="mt-6 flex items-center gap-3">
-          <div class="h-11 w-11 rounded-full bg-gradient-to-br from-go-400 to-go-600"></div>
-          <div>
-            <p class="text-[14px] font-semibold text-navy-900 dark:text-white">Camila Ferreira</p>
-            <p class="text-[12.5px] text-navy-500 dark:text-navy-400">Móveis Ferreira</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ======================= FAQ ======================= -->
-<section id="faq" class="py-28 lg:py-36 bg-white dark:bg-navy-950">
-  <div class="max-w-3xl mx-auto px-6 lg:px-10">
-    <div class="text-center">
-      <p class="reveal text-[13px] font-semibold tracking-widest uppercase text-brand-600 dark:text-brand-400">Perguntas frequentes</p>
-      <h2 class="reveal reveal-delay-1 mt-4 text-4xl sm:text-5xl font-extrabold tracking-tightest text-navy-900 dark:text-white leading-[1.08]">
-        Tire suas dúvidas
-      </h2>
-    </div>
-
-    <div class="mt-14 space-y-3" id="accordion">
-
-      <div class="accordion-item reveal reveal-delay-1 rounded-2xl border border-navy-900/8 dark:border-white/10 overflow-hidden">
-        <button class="accordion-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left">
-          <span class="font-semibold text-[15px] text-navy-900 dark:text-white">Quanto tempo leva para o site ficar pronto?</span>
-          <svg class="chevron h-5 w-5 flex-shrink-0 text-navy-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
-        </button>
-        <div class="accordion-content px-6">
-          <p class="pb-6 text-[14.5px] text-navy-500 dark:text-navy-400 leading-relaxed">Em média, 30 dias entre o diagnóstico e a publicação. O prazo exato depende da complexidade do projeto e da agilidade na troca de conteúdo e materiais.</p>
-        </div>
-      </div>
-
-      <div class="accordion-item reveal reveal-delay-2 rounded-2xl border border-navy-900/8 dark:border-white/10 overflow-hidden">
-        <button class="accordion-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left">
-          <span class="font-semibold text-[15px] text-navy-900 dark:text-white">O diagnóstico gratuito tem algum compromisso?</span>
-          <svg class="chevron h-5 w-5 flex-shrink-0 text-navy-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
-        </button>
-        <div class="accordion-content px-6">
-          <p class="pb-6 text-[14.5px] text-navy-500 dark:text-navy-400 leading-relaxed">Nenhum. Avaliamos sua presença digital atual e mostramos onde estão as maiores oportunidades — a decisão de seguir é sempre sua.</p>
-        </div>
-      </div>
-
-      <div class="accordion-item reveal reveal-delay-3 rounded-2xl border border-navy-900/8 dark:border-white/10 overflow-hidden">
-        <button class="accordion-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left">
-          <span class="font-semibold text-[15px] text-navy-900 dark:text-white">Minha empresa é pequena, faz sentido investir agora?</span>
-          <svg class="chevron h-5 w-5 flex-shrink-0 text-navy-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
-        </button>
-        <div class="accordion-content px-6">
-          <p class="pb-6 text-[14.5px] text-navy-500 dark:text-navy-400 leading-relaxed">Sim — quanto menor a empresa, maior o peso que a credibilidade digital tem na decisão do cliente. É exatamente aí que trabalhamos as prioridades certas para o seu orçamento.</p>
-        </div>
-      </div>
-
-      <div class="accordion-item reveal reveal-delay-4 rounded-2xl border border-navy-900/8 dark:border-white/10 overflow-hidden">
-        <button class="accordion-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left">
-          <span class="font-semibold text-[15px] text-navy-900 dark:text-white">Vocês cuidam da manutenção depois da entrega?</span>
-          <svg class="chevron h-5 w-5 flex-shrink-0 text-navy-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
-        </button>
-        <div class="accordion-content px-6">
-          <p class="pb-6 text-[14.5px] text-navy-500 dark:text-navy-400 leading-relaxed">Sim. Hospedagem, suporte e acompanhamento de resultados continuam com a gente depois que o site vai ao ar.</p>
-        </div>
-      </div>
-
-      <div class="accordion-item reveal rounded-2xl border border-navy-900/8 dark:border-white/10 overflow-hidden">
-        <button class="accordion-trigger w-full flex items-center justify-between gap-4 px-6 py-5 text-left">
-          <span class="font-semibold text-[15px] text-navy-900 dark:text-white">Preciso trocar de site se já tenho um?</span>
-          <svg class="chevron h-5 w-5 flex-shrink-0 text-navy-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14" stroke-linecap="round"/></svg>
-        </button>
-        <div class="accordion-content px-6">
-          <p class="pb-6 text-[14.5px] text-navy-500 dark:text-navy-400 leading-relaxed">Nem sempre. No diagnóstico avaliamos se o site atual pode ser otimizado ou se um novo projeto traz melhor retorno.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ======================= CTA ======================= -->
-<section id="cta" class="relative py-28 lg:py-36 overflow-hidden bg-navy-950">
-  <div class="absolute inset-0 dot-grid opacity-25 pointer-events-none"></div>
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[800px] rounded-full bg-brand-500/15 blur-[130px] pointer-events-none"></div>
-
-  <div class="relative max-w-5xl mx-auto px-6">
-    <div class="max-w-2xl mx-auto text-center">
-      <h2 class="reveal text-4xl sm:text-6xl font-extrabold tracking-tightest text-white leading-[1.06]">
-        Receba gratuitamente um diagnóstico digital da sua empresa.
-      </h2>
-      <p class="reveal reveal-delay-1 mt-6 text-lg text-navy-300 leading-relaxed max-w-xl mx-auto">
-        Em até 24 horas analisaremos o essencial da sua presença digital — sem custo e sem compromisso.
-      </p>
-    </div>
-
-    <div class="mt-14 grid lg:grid-cols-2 gap-6 items-stretch">
-
-      <!-- Caixa de entregáveis -->
-      <div class="reveal reveal-delay-2 rounded-2xl border border-white/10 bg-white/[0.03] p-8">
-        <p class="text-[13px] font-semibold tracking-widest uppercase text-go-400 mb-6">O que vamos analisar</p>
-        <ul class="space-y-4">
-          <li class="flex items-center gap-3 text-[15px] text-navy-200"><span class="h-1.5 w-1.5 rounded-full bg-go-500 flex-shrink-0"></span>Site</li>
-          <li class="flex items-center gap-3 text-[15px] text-navy-200"><span class="h-1.5 w-1.5 rounded-full bg-go-500 flex-shrink-0"></span>Google</li>
-          <li class="flex items-center gap-3 text-[15px] text-navy-200"><span class="h-1.5 w-1.5 rounded-full bg-go-500 flex-shrink-0"></span>SEO</li>
-          <li class="flex items-center gap-3 text-[15px] text-navy-200"><span class="h-1.5 w-1.5 rounded-full bg-go-500 flex-shrink-0"></span>WhatsApp</li>
-          <li class="flex items-center gap-3 text-[15px] text-navy-200"><span class="h-1.5 w-1.5 rounded-full bg-go-500 flex-shrink-0"></span>Credibilidade</li>
-          <li class="flex items-center gap-3 text-[15px] text-navy-200"><span class="h-1.5 w-1.5 rounded-full bg-go-500 flex-shrink-0"></span>Oportunidades de melhoria</li>
-        </ul>
-      </div>
-
-      <!-- Formulário -->
-      <form id="diagnostico-form" class="reveal reveal-delay-3 rounded-2xl border border-white/10 bg-white/[0.03] p-8 flex flex-col">
-        <div>
-          <label for="f-nome" class="block text-[13px] font-medium text-navy-300 mb-2">Seu nome</label>
-          <input id="f-nome" name="nome" type="text" required placeholder="Como podemos te chamar?" class="w-full rounded-xl bg-white/[0.05] border border-white/10 px-4 py-3 text-[14.5px] text-white placeholder:text-navy-500 focus:outline-none focus:border-brand-400 transition-colors">
-        </div>
-        <div class="mt-4">
-          <label for="f-segmento" class="block text-[13px] font-medium text-navy-300 mb-2">Segmento da empresa</label>
-          <select id="f-segmento" name="segmento" required class="w-full rounded-xl bg-white/[0.05] border border-white/10 px-4 py-3 text-[14.5px] text-white focus:outline-none focus:border-brand-400 transition-colors">
-            <option value="" disabled selected class="bg-navy-900">Selecione uma opção</option>
-            <option value="Oficina" class="bg-navy-900">Oficina</option>
-            <option value="Restaurante" class="bg-navy-900">Restaurante</option>
-            <option value="Hotel" class="bg-navy-900">Hotel</option>
-            <option value="Clínica" class="bg-navy-900">Clínica</option>
-            <option value="Loja" class="bg-navy-900">Loja</option>
-            <option value="Prestador de serviço" class="bg-navy-900">Prestador de serviço</option>
-            <option value="Outro" class="bg-navy-900">Outro</option>
-          </select>
-        </div>
-        <button type="submit" class="btn-cta btn-glow relative mt-6 rounded-full px-7 py-3.5 text-[15px] font-semibold w-full">Quero meu diagnóstico gratuito</button>
-        <p class="mt-4 text-[13px] text-navy-400 text-center">Responderemos em até 24 horas úteis.</p>
-      </form>
-
-    </div>
-  </div>
-</section>
-
-<!-- ======================= RODAPÉ ======================= -->
-<footer class="bg-navy-950 border-t border-white/8">
-  <div class="max-w-7xl mx-auto px-6 lg:px-10 py-16">
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
-
-      <div>
-        <div class="flex items-center gap-2.5">
-          <span class="relative flex h-8 w-8 items-center justify-center rounded-lg bg-white">
-            <span class="h-2.5 w-2.5 rounded-full bg-go-500"></span>
-          </span>
-          <span class="text-[15px] font-bold tracking-tight text-white">Posiciona<span class="text-brand-400">Digital</span></span>
-        </div>
-        <p class="mt-5 text-[14px] text-navy-400 leading-relaxed max-w-xs">Presença digital que transforma buscas em clientes para pequenas e médias empresas.</p>
-        <p class="mt-4 text-[13px] text-navy-500 leading-relaxed max-w-xs">Nossa missão é dar a empresas locais a mesma credibilidade digital das grandes marcas — para que sejam encontradas pelos clientes certos, todos os dias.</p>
-      </div>
-
-      <div>
-        <p class="text-[13px] font-semibold text-white mb-4">Navegação</p>
-        <ul class="space-y-3 text-[14px] text-navy-400">
-          <li><a href="#solucao" class="hover:text-white transition-colors">Soluções</a></li>
-          <li><a href="#processo" class="hover:text-white transition-colors">Como funciona</a></li>
-          <li><a href="#projetos" class="hover:text-white transition-colors">Projetos</a></li>
-          <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <p class="text-[13px] font-semibold text-white mb-4">Contato</p>
-        <ul class="space-y-3 text-[14px] text-navy-400">
-          <li class="flex items-center gap-2">
-            <svg class="h-4 w-4 text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 5h18v14H3V5z"/><path d="M3 6l9 7 9-7"/></svg>
-            contato@posicionadigital.com.br
-          </li>
-          <li class="flex items-center gap-2">
-            <svg class="h-4 w-4 text-brand-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-5.2-7-11a7 7 0 1 1 14 0c0 5.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
-            Atendimento em todo o Brasil
-          </li>
-        </ul>
-      </div>
-
-      <div>
-        <p class="text-[13px] font-semibold text-white mb-4">Redes</p>
-        <div class="flex items-center gap-3">
-          <a href="https://wa.me/55996484950?text=Ol%C3%A1!%20Quero%20meu%20diagn%C3%B3stico%20gratuito" target="_blank" rel="noopener" aria-label="WhatsApp" class="h-10 w-10 rounded-full border border-white/12 grid place-items-center text-navy-300 hover:text-white hover:border-white/30 transition-colors">
-            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5s-.6-1.5-.9-2c-.2-.5-.5-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.9 1.2 3.1c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.2-.1-.2-.3-.2-.6-.3z"/></svg>
-          </a>
-          <a href="#" aria-label="Instagram" class="h-10 w-10 rounded-full border border-white/12 grid place-items-center text-navy-300 hover:text-white hover:border-white/30 transition-colors">
-            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
-          </a>
-          <a href="#" aria-label="E-mail" class="h-10 w-10 rounded-full border border-white/12 grid place-items-center text-navy-300 hover:text-white hover:border-white/30 transition-colors">
-            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 5h18v14H3V5z"/><path d="M3 6l9 7 9-7"/></svg>
-          </a>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="mt-14 pt-8 border-t border-white/8 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-[13px] text-navy-500">© 2026 Posiciona Digital. Todos os direitos reservados.</p>
-      <p class="text-[13px] text-navy-500">Feito para empresas que querem ser encontradas.</p>
-    </div>
-  </div>
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 pb-10 text-xs text-navy-500">© 2026 Posiciona Digital · WR Soluções · São Gabriel/RS</div>
 </footer>
 
+<a href="https://wa.me/5555999370338?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Posiciona%20Digital." target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.1-1.6-.8-1.9-.9-.3-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.1.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.1.2-.3.3-.4.1-.2 0-.4 0-.5s-.6-1.5-.9-2c-.2-.5-.5-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.9 1.2 3.1c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.2-.1-.2-.3-.2-.6-.3z"/></svg><span class="ml-2 text-sm font-semibold">Falar no WhatsApp</span></a>
+
 <script>
-  // Theme toggle
-  const root = document.documentElement;
-  const stored = null; // artifacts have no persistent storage — default to system preference
-  if (window.matchMedia('(prefers-color-scheme: dark)').matches) root.classList.add('dark');
-  document.getElementById('theme-toggle').addEventListener('click', () => {
-    root.classList.toggle('dark');
-  });
-
-  // Header glass on scroll
-  const headerInner = document.getElementById('header-inner');
-  const onScroll = () => {
-    if (window.scrollY > 24) {
-      headerInner.classList.add('glass', 'shadow-[0_8px_30px_-12px_rgba(15,23,42,0.15)]');
-    } else {
-      headerInner.classList.remove('glass', 'shadow-[0_8px_30px_-12px_rgba(15,23,42,0.15)]');
-    }
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
-
-  // Reveal on scroll
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  document.querySelectorAll('.reveal, .step-number').forEach(el => io.observe(el));
-
-  // Accordion
-  document.querySelectorAll('.accordion-trigger').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.closest('.accordion-item');
-      const wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.accordion-item.open').forEach(i => i.classList.remove('open'));
-      if (!wasOpen) item.classList.add('open');
-    });
-  });
-
-  // Formulário de diagnóstico -> abre WhatsApp com os dados preenchidos
-  const diagForm = document.getElementById('diagnostico-form');
-  if (diagForm) {
-    diagForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const nome = document.getElementById('f-nome').value.trim();
-      const segmento = document.getElementById('f-segmento').value;
-      const msg = `Olá! Meu nome é ${nome} e minha empresa é do segmento de ${segmento}. Quero meu diagnóstico gratuito.`;
-      window.open(`https://wa.me/55996484950?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
-    });
-  }
-
-  // Smooth anchor offset for fixed header
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', (e) => {
-      const id = a.getAttribute('href');
-      if (id.length > 1) {
-        const target = document.querySelector(id);
-        if (target) {
-          e.preventDefault();
-          const y = target.getBoundingClientRect().top + window.scrollY - 90;
-          window.scrollTo({ top: y, behavior: 'smooth' });
-        }
-      }
-    });
-  });
+const root=document.documentElement;if(window.matchMedia('(prefers-color-scheme: dark)').matches)root.classList.add('dark');document.getElementById('theme-toggle').addEventListener('click',()=>root.classList.toggle('dark'));const hi=document.getElementById('header-inner');addEventListener('scroll',()=>{if(scrollY>24)hi.classList.add('glass','shadow-lg');else hi.classList.remove('glass','shadow-lg')},{passive:true});const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
 </script>
-
 </body>
 </html>
